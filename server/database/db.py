@@ -1,140 +1,65 @@
-import sqlite3
-import make_video_to_part.main as v2p
+from flask import Flask, request, jsonify
+import pymysql
 
-def makeDB():
-    # create database and make table
-    conn = sqlite3.connect('piano.db')
-    # cursor
+from setting import DB_NAME, DB_HOST, DB_USER, DB_PASSWORD
 
-    cur = conn.cursor()
+app = Flask(__name__)
+# MySQL 연결 설정
+db = pymysql.connect(
+    host=DB_HOST,
+    user=DB_USER,
+    password=DB_PASSWORD,
+    database=DB_NAME
+)
 
-    sql = '''
-        CREATE TABLE IF NOT EXISTS piano_data(
-            id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
-            name TEXT NOT NULL, 
-            song_name TEXT NOT NULL,
-            song_part_name TEXT NOT NULL,
-            music_score INTEGER NOT NULL,
-            tech_score INTEGER NOT NULL,
-            sound_score INTEGER NOT NULL,
-            articulation INTEGER NOT NULL
-            )
-    '''
-    cur.execute(sql)
-    conn.commit()
+# CRUD 연산
 
-    sql2 = '''
-        CREATE TABLE IF NOT EXISTS song_data(
-            id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
-            name TEXT NOT NULL,
-            url  Char(255) NOT NULL 
-            )
-    '''
+# CREATE (데이터 추가)
+@app.route('/create', methods=['POST'])
+def create():
+    cursor = db.cursor()
+    data = request.get_json()
+    query = "INSERT INTO your_table (column1, column2, ...) VALUES (%s, %s, ...)"
+    values = (data['value1'], data['value2'], ...)  # 요청에서 받은 데이터 사용
+    cursor.execute(query, values)
+    db.commit()
+    cursor.close()
+    return jsonify({"message": "데이터가 추가되었습니다."})
 
-    cur.execute(sql2)
-    conn.commit()
+# READ (데이터 조회)
+@app.route('/read/<int:id>', methods=['GET'])
+def read(id):
+    cursor = db.cursor()
+    query = "SELECT * FROM your_table WHERE id = %s"
+    cursor.execute(query, (id,))
+    result = cursor.fetchone()
+    cursor.close()
+    if result:
+        return jsonify({"data": result})
+    else:
+        return jsonify({"message": "데이터가 없습니다."})
 
-    sql3 = '''
-        CREATE TABLE IF NOT EXISTS song_part_data(
-            id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
-            part INTEGER NOT NULL, 
-            song_name_id INTEGER NOT NULL,
-            url Char(255) NOT NULL,
-            FOREIGN KEY("song_name_id") REFERENCES song_data(id)
-            )
-    '''
-    cur.execute(sql3)
-    conn.commit()
-    cur.close()
-    conn.close()
+# UPDATE (데이터 수정)
+@app.route('/update/<int:id>', methods=['PUT'])
+def update(id):
+    cursor = db.cursor()
+    data = request.get_json()
+    query = "UPDATE your_table SET column1 = %s, column2 = %s, ... WHERE id = %s"
+    values = (data['value1'], data['value2'], ..., id)  # 요청에서 받은 데이터 사용
+    cursor.execute(query, values)
+    db.commit()
+    cursor.close()
+    return jsonify({"message": "데이터가 수정되었습니다."})
 
-def insert_song(name, origin_url, part_cnt, part_url):
-    # name : 음악 이름
-    # origin_url : 음악 저장 경로
-    # part의 개수 : 총 몇개인지?
-    # part의 url : 리스트의 형태로 모든 파트의 주소값이 들어가 있어야함.
-    song_data_list = [name, origin_url]
+# DELETE (데이터 삭제)
+@app.route('/delete/<int:id>', methods=['DELETE'])
+def delete(id):
+    cursor = db.cursor()
+    query = "DELETE FROM your_table WHERE id = %s"
+    cursor.execute(query, (id,))
+    db.commit()
+    cursor.close()
+    return jsonify({"message": "데이터가 삭제되었습니다."})
 
-
-
-    # 음악 db에 저장 , 음악 이름과, 파일 위치 url
-    conn = sqlite3.connect('piano.db')
-    cur = conn.cursor()
-    sql = '''
-        INSERT INTO song_data(name, url) VALUES(?, ?)
-    '''
-    cur.execute(sql, song_data_list)
-    conn.commit()
-
-    # 저장된 음악의 id값 조회
-    sql = '''
-        SELECT id from song_data WHERE name=?
-    '''
-    cur.execute(sql, name)
-    id = cur.fetchone()
-
-    # 음악 part db에 저장
-    sql = '''
-        INSERT INTO song_part_data(part, url, song_name_id) VALUES(?, ?, ?)
-    '''
-    data = []
-    for i in range(len(part_cnt)):
-        data.append([i, id, part_url[i]])
-
-    cur.executemany(sql, data)
-    conn.commit()
-
-    cur.close()
-    conn.close()
-
-def insert_piano_data(name, song_name, song_part_name, music_score, tech_score, sound_score, articulation):
-    #piano_data_list = ['박민서', '녹턴', 'part0', 1, 1, 1, 1]
-    piano_data_list = [name, song_name, song_part_name, music_score, tech_score, sound_score, articulation]
-
-    conn = sqlite3.connect('piano.db')
-    cur = conn.cursor()
-
-    sql = '''
-        INSERT INTO piano_data(name, song_name,song_part_name, music_score, tech_score, sound_score, articulation) VALUES(?, ?,?, ?, ?, ?, ?) 
-    '''
-    cur.execute(sql, piano_data_list)
-    conn.commit()
-    cur.close()
-    conn.close()
-
-def get_piano_data(name):
-    try:
-        varList = [name]
-
-        conn = sqlite3.connect('piano.db')
-        cur = conn.cursor()
-
-        sql = '''
-            SELECT * from piano_data WHERE name == ?
-        '''
-
-        cur.execute(sql, varList)
-
-        result= []
-        for i in cur.fetchall():
-            result.append(i)
-        cur.close()
-        conn.close()
-        return result
-    except:
-        print('해당 이름은 없습니다')
-
-def delete_piano_data(name):
-    try:
-        varList = [name]
-        conn = sqlite3.connect('piano.db')
-        cur = conn.cursor()
-        sql = '''
-            DELETE FROM piano_data WHERE name == ?
-        '''
-        cur.execute(sql, varList)
-        conn.commit()
-        cur.close()
-        conn.close()
-    except:
-        print('삭제하는 도중 오류 발생!')
+if __name__ == '__main__':
+    app.run(debug=True)

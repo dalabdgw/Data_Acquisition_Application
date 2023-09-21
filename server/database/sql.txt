@@ -1,0 +1,14 @@
+데이터베이스 만들기
+
+CREATE DATABASE IF NOT EXISTS annotation_server;
+
+CREATE TABLE IF NOT EXISTS annotation_data(
+    review_id INT PRIMARY KEY,
+    review_song_name VARCHAR(128) NOT NULL,
+    review_person_name VARCHAR(128) NOT NULL,
+    created_date    VARCHAR(128) NOT NULL,
+    music_score     INT     NOT NULL,
+    tech_score      INT     NOT NULL,
+    sound_score     INT     NOT NULL,
+    articulation_score INT NOT NULL);
+
