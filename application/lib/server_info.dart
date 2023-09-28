@@ -1,5 +1,5 @@
 // database IP
-String MYSERVERIP = 'http://3.35.37.144';
+String MYSERVERIP = 'http://127.0.0.1';
 
 
 //database PORT
