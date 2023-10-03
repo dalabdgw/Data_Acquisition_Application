@@ -168,7 +168,7 @@ class _ReviewDataScreenState extends State<ReviewDataScreen> {
                           Container(
                               height: 50.0,
                               width: MediaQuery.of(context).size.width,
-                              child: Text('곡명: ${song_name} , 파트명', style: TextStyle(fontSize: 20.0),textAlign: TextAlign.center,)
+                              child: Text('곡명: ${song_name} , 파트: ${part_cursor}', style: TextStyle(fontSize: 20.0),textAlign: TextAlign.center,)
                           ),
                           Container(
                             height: 400.0,
