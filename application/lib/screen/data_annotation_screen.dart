@@ -50,10 +50,10 @@ class _DataAnnotationScreenState extends State<DataAnnotationScreen> {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
         onPressed: (){
-          //Navigator.push(context, MaterialPageRoute(builder: (_)=>EnrollSongScreen()));
+          renderDescription();
         },
         backgroundColor: Colors.black,
-        child: Text('곡 등록'),
+        child: Text('설명서'),
       ),
       appBar: AppBar(
         leading: Container(
@@ -497,7 +497,58 @@ class _DataAnnotationScreenState extends State<DataAnnotationScreen> {
     );
   }
 
+  renderDescription(){
 
+    int cursor = 0;
+
+    List<String> description_list = [
+      'asset/image/description_img/1.png',
+      'asset/image/description_img/2.png',
+      'asset/image/description_img/3.png',
+      'asset/image/description_img/4.png',
+      'asset/image/description_img/1.png',
+      'asset/image/description_img/1.png',
+    ];
+
+    showDialog(context: context, builder: (BuildContext context){
+      return StatefulBuilder(builder: (BuildContext context, StateSetter setState){
+        return AlertDialog(
+          title: Text('리뷰 시스템 사용법'),
+          content: Container(
+            width: MediaQuery.of(context).size.width,
+            decoration: BoxDecoration(
+                image: DecorationImage(
+                    image: AssetImage(description_list[cursor]),
+                    fit: BoxFit.fitWidth
+                )
+            ),
+          ),
+          actions: [
+            ElevatedButton(onPressed: (){
+              if(cursor == 0){
+                print('처음');
+              }else{
+                cursor-=1;
+              }
+              setState(() {
+
+              });
+            }, child: Text('이전')),
+            ElevatedButton(onPressed: (){
+              if(cursor > description_list.length -1){
+                print('마지막');
+              }else{
+                cursor+=1;
+              }
+              setState(() {
+
+              });
+            }, child: Text('다음'))
+          ],
+        );
+      });
+    });
+  }
 
   @override
   void dispose(){
