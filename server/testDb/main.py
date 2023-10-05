@@ -9,12 +9,13 @@ DB_USER = ''
 DB_PASSWORD = ''
 DATABASE = 'annotationDB'
 
+DB_HOST = input('데이터베이스 ip 입력 해주세요: ')
+DB_USER = input('user 입력 해주세요: ')
+DB_PASSWORD = input('password ip 입력 해주세요: ')
+
+
 def create_app():
     app = Flask(__name__)
-
-    DB_HOST = input('데이터베이스 ip 입력 해주세요: ')
-    DB_USER = input('user 입력 해주세요: ')
-    DB_PASSWORD = input('password ip 입력 해주세요: ')
 
 
     # db 연결
