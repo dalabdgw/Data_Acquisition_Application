@@ -4,7 +4,7 @@ from datetime import datetime
 
 
 DB_HOST = ''
-DB_PORT = ''
+DB_PORT = '3306'
 DB_USER = ''
 DB_PASSWORD = ''
 DATABASE = 'annotationDB'
