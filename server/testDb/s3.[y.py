@@ -14,11 +14,14 @@ bucket = 'testminseobucket'
     # aws region
 location = 'ap-northeast-2'
 
+access_key = input('access key: ')
+secret_key = input('secret key: ')
+
     # 자격 증명
 s3_client = boto3.client(
         's3',
-        aws_access_key_id='',
-        aws_secret_access_key=''
+        aws_access_key_id=access_key,
+        aws_secret_access_key=secret_key
     )
 
 # S3 파일 업로드 및 url 가져오기
