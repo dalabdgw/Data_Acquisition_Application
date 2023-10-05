@@ -17,8 +17,8 @@ location = 'ap-northeast-2'
     # 자격 증명
 s3_client = boto3.client(
         's3',
-        aws_access_key_id='AKIA3ZXWZCU33UGOIIGM',
-        aws_secret_access_key='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'
+        aws_access_key_id='',
+        aws_secret_access_key=''
     )
 
 # S3 파일 업로드 및 url 가져오기
