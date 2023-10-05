@@ -1,7 +1,6 @@
 from flask import Flask, jsonify, request
 import pymysql
 from datetime import datetime
-
 from setting import DB_NAME, DB_HOST, DB_USER, DB_PASSWORD
 
 def create_app():
