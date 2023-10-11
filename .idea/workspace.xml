@@ -5,9 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e0dc829a-92df-4fcd-97e8-263a8a82897c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/build/web/main.dart.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/lib/server_info.dart" beforeDir="false" afterPath="$PROJECT_DIR$/application/lib/server_info.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web_service/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/web_service/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web_service/templates" beforeDir="false" afterPath="$PROJECT_DIR$/web_service/templates" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web_service/templates/flutter_service_worker.js" beforeDir="false" afterPath="$PROJECT_DIR$/web_service/templates/flutter_service_worker.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web_service/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/web_service/templates/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web_service/templates/main.dart.js" beforeDir="false" afterPath="$PROJECT_DIR$/web_service/templates/main.dart.js" afterDir="false" />
