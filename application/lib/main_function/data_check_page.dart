@@ -41,7 +41,7 @@ class _DataCheckPageState extends State<DataCheckPage> {
 
   Future<String> load_piano_data() async{
     Dio dio = Dio();
-    final res = await dio.get('${MYSERVERIP}/get_score_data', queryParameters: {'name' :'박민서'});
+    final res = await dio.get('${AWSRDSIP}/get_score_data', queryParameters: {'name' :'박민서'});
 
     for(int i =0;i<res.data.length;i++){
       for(int j=0;j<res.data[0].length;j++){

@@ -4,6 +4,7 @@ from datetime import datetime
 from setting import DB_NAME, DB_HOST, DB_USER, DB_PASSWORD
 
 def create_app():
+
     app = Flask(__name__)
 
     # db 연결
@@ -16,15 +17,18 @@ def create_app():
     insertSongTable('Chopinetudeop.10no.1')
     insertSongTable('Chopinetudeop.10no.4')
 
+    @app.route('/ping', methods=['GET'])
+    def ping():
+        return 'SERVER Working'
+
     # 음악 파트 리스트를 노래이름을 기반으로 불러온다.
     @app.route('/load_song_part_list', methods=['GET'])
     def load_song_part_list():
         song_name = request.args.get('song_name')
         data = loadSongPartTable(song_name)
         return jsonify(data)
-
-    @app.route('/save_review_data', methods=['POST'])
-    def save_review_data():
+    @app.route('/input_review_data', methods=['POST'])
+    def input_review_data():
 
         review_data = request.json
 
@@ -42,24 +46,21 @@ def create_app():
             print(e)
 
         return '200'
-
     @app.route('/load_song_list', methods=['GET'])
-    def load_song():
+    def load_song_list():
         data = []
         list = loadSongName()
         for i in list:
             data.append(i[0])
         return jsonify(data)
-
-    @app.route('/load_user_review')
+    @app.route('/load_user_review', methods=['GET'])
     def load_user_review():
         user_id = request.args.get('user_id')
 
         song_name_list = loadReviewSong(user_id)
 
         return jsonify(song_name_list)
-
-    @app.route('/load_part_review')
+    @app.route('/load_part_review', methods=['GET'])
     def load_part_review():
         user_id = request.args.get('user_id')
         song_name = request.args.get('song_name')
@@ -69,7 +70,6 @@ def create_app():
         return jsonify(part_review_list)
 
     return app
-
 
 # db connector
 def connect_to_db():
@@ -83,8 +83,6 @@ def connect_to_db():
     connection = pymysql.connect(host=db_host, user=db_user, password=db_password, database=database)
 
     return connection
-
-
 # annotation DB 만들기
 def makeAnnotationDatabase():
     try:
@@ -115,8 +113,6 @@ def makeAnnotationDatabase():
     finally:
         cursor.close()
         connection.close()
-
-
 # table 만들기
 def makeSongListTable():
     try:
@@ -145,8 +141,6 @@ def makeSongListTable():
     finally:
         cursor.close()
         connection.close()
-
-
 def makeSongPartListTable():
     try:
         # MySQL 데이터베이스에 연결
@@ -178,8 +172,6 @@ def makeSongPartListTable():
     finally:
         cursor.close()
         connection.close()
-
-
 def makeReviewTable():
     try:
         # MySQL 데이터베이스에 연결
@@ -257,8 +249,6 @@ def insertSongTable(song_name):
     finally:
         cursor.close()
         connection.close()
-
-
 # song_name을 기반으로 song_id값을 추출한다.
 # part_data : 파트 정보 , 튜플 값을 갖기! part_url, part_seq 순으로!
 def insertSongPartTable(song_name, part_data):
@@ -307,16 +297,12 @@ def insertSongPartTable(song_name, part_data):
     finally:
         cursor.close()
         connection.close()
-
-
 '''
 song_name : song_name을 기반으로 song_id 값 추출
 part_num : 몇번 째 파트 인지 기록하기위해
 user_id : 어떤 유저가 데이터를 저장하는지에 대해
 그외 나머지 점수.
 '''
-
-
 def insertReviewTable(song_name, part_num, user_id, music_score, tech_score, sound_score, articulation_score):
     # 필요한 변수
     # 1. song_name
@@ -390,6 +376,7 @@ def insertReviewTable(song_name, part_num, user_id, music_score, tech_score, sou
         connection.close()
 
 
+
 # 데이터 조회 함수
 # song_name : 곡 이름에 해당하는 파트 별 동영상 추출!
 def loadSongPartTable(song_name):
@@ -440,8 +427,6 @@ def loadSongPartTable(song_name):
     finally:
         cursor.close()
         connection.close()
-
-
 # user_id : 유저 id를 기반으로 리뷰 데이터 수집!
 def loadReviewDataTable(user_id):
     try:
@@ -476,8 +461,6 @@ def loadReviewDataTable(user_id):
     finally:
         cursor.close()
         connection.close()
-
-
 # user_id : 유저 id를 기반으로 곡 정보 출력
 def loadReviewSong(user_id):
     try:
@@ -510,8 +493,6 @@ def loadReviewSong(user_id):
     finally:
         cursor.close()
         connection.close()
-
-
 def loadReviewPart(user_id, song_name):
     try:
         # MySQL 데이터베이스에 연결
@@ -566,8 +547,6 @@ def loadReviewPart(user_id, song_name):
     finally:
         cursor.close()
         connection.close()
-
-
 def loadSongName():
     try:
         # MySQL 데이터베이스에 연결
@@ -591,6 +570,7 @@ def loadSongName():
     finally:
         cursor.close()
         connection.close()
+
 
 
 if __name__ == "__main__":

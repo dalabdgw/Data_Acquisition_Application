@@ -1,9 +1,8 @@
+
+
 // database IP
-String MYSERVERIP = 'http://127.0.0.1';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
-
-//database PORT
-String MYDBPORT = ':50000';
-
-//file_server PORT
-String MYFILESERVERPORT = ':80';
+String AWSRDSIP ='http://127.0.0.1:50000';
+//String AWSRDSIP = dotenv.get('DB_RDS_CONNECTION');
+String AWSS3IP = dotenv.get('S3_IP');

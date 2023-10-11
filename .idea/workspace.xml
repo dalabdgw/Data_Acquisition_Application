@@ -5,7 +5,180 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e0dc829a-92df-4fcd-97e8-263a8a82897c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/server/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/server/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/database/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/application/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/lib/main_function/data_check_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/application/lib/main_function/data_check_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/lib/main_function/main_function_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/application/lib/main_function/main_function_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/lib/screen/data_annotation_connection_func.dart" beforeDir="false" afterPath="$PROJECT_DIR$/application/lib/screen/data_annotation_connection_func.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/lib/screen/data_annotation_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/application/lib/screen/data_annotation_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/lib/server_info.dart" beforeDir="false" afterPath="$PROJECT_DIR$/application/lib/server_info.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/database/db.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/database/db.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/database/s3.[y.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/database/save_song.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/setting.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/database/setting.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/.idea/testDb.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/Chopinetudedae/OriginalData/.ipynb_checkpoints/ffmpeg_fun-checkpoint.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/Chopinetudedae/OriginalData/ffmpeg_fun.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/Chopinetudedae/OriginalData/video.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/Chopinetudedae/phrase/data0.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/Chopinetudedae/phrase/data1.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/Chopinetudedae/phrase/data10.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/Chopinetudedae/phrase/data11.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/Chopinetudedae/phrase/data12.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/Chopinetudedae/phrase/data13.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/Chopinetudedae/phrase/data14.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/Chopinetudedae/phrase/data15.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/Chopinetudedae/phrase/data16.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/Chopinetudedae/phrase/data17.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/Chopinetudedae/phrase/data18.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/Chopinetudedae/phrase/data19.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/Chopinetudedae/phrase/data2.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/Chopinetudedae/phrase/data20.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/Chopinetudedae/phrase/data21.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/Chopinetudedae/phrase/data22.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/Chopinetudedae/phrase/data23.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/Chopinetudedae/phrase/data24.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/Chopinetudedae/phrase/data25.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/Chopinetudedae/phrase/data26.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/Chopinetudedae/phrase/data27.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/Chopinetudedae/phrase/data28.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/Chopinetudedae/phrase/data29.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/Chopinetudedae/phrase/data3.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/Chopinetudedae/phrase/data30.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/Chopinetudedae/phrase/data31.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/Chopinetudedae/phrase/data32.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/Chopinetudedae/phrase/data33.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/Chopinetudedae/phrase/data34.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/Chopinetudedae/phrase/data35.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/Chopinetudedae/phrase/data36.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/Chopinetudedae/phrase/data37.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/Chopinetudedae/phrase/data38.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/Chopinetudedae/phrase/data39.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/Chopinetudedae/phrase/data4.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/Chopinetudedae/phrase/data5.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/Chopinetudedae/phrase/data6.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/Chopinetudedae/phrase/data7.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/Chopinetudedae/phrase/data8.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/Chopinetudedae/phrase/data9.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/Chopinetudeop.10no.1/OriginalData/.ipynb_checkpoints/ffmpeg_fun-checkpoint.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/Chopinetudeop.10no.1/OriginalData/data0.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/Chopinetudeop.10no.1/OriginalData/data1.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/Chopinetudeop.10no.1/OriginalData/data10.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/Chopinetudeop.10no.1/OriginalData/data11.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/Chopinetudeop.10no.1/OriginalData/data12.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/Chopinetudeop.10no.1/OriginalData/data13.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/Chopinetudeop.10no.1/OriginalData/data14.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/Chopinetudeop.10no.1/OriginalData/data15.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/Chopinetudeop.10no.1/OriginalData/data16.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/Chopinetudeop.10no.1/OriginalData/data17.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/Chopinetudeop.10no.1/OriginalData/data2.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/Chopinetudeop.10no.1/OriginalData/data3.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/Chopinetudeop.10no.1/OriginalData/data4.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/Chopinetudeop.10no.1/OriginalData/data5.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/Chopinetudeop.10no.1/OriginalData/data6.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/Chopinetudeop.10no.1/OriginalData/data7.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/Chopinetudeop.10no.1/OriginalData/data8.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/Chopinetudeop.10no.1/OriginalData/data9.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/Chopinetudeop.10no.1/OriginalData/ffmpeg_fun.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/Chopinetudeop.10no.1/OriginalData/video.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/Chopinetudeop.10no.1/phrase/data0.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/Chopinetudeop.10no.1/phrase/data1.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/Chopinetudeop.10no.1/phrase/data10.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/Chopinetudeop.10no.1/phrase/data11.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/Chopinetudeop.10no.1/phrase/data12.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/Chopinetudeop.10no.1/phrase/data13.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/Chopinetudeop.10no.1/phrase/data14.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/Chopinetudeop.10no.1/phrase/data15.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/Chopinetudeop.10no.1/phrase/data16.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/Chopinetudeop.10no.1/phrase/data17.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/Chopinetudeop.10no.1/phrase/data2.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/Chopinetudeop.10no.1/phrase/data3.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/Chopinetudeop.10no.1/phrase/data4.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/Chopinetudeop.10no.1/phrase/data5.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/Chopinetudeop.10no.1/phrase/data6.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/Chopinetudeop.10no.1/phrase/data7.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/Chopinetudeop.10no.1/phrase/data8.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/Chopinetudeop.10no.1/phrase/data9.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/Chopinetudeop.10no.4/OriginalData/.ipynb_checkpoints/ffmpeg_fun-checkpoint.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/Chopinetudeop.10no.4/OriginalData/ffmpeg_fun.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/Chopinetudeop.10no.4/OriginalData/video.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/Chopinetudeop.10no.4/phrase/data0.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/Chopinetudeop.10no.4/phrase/data1.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/Chopinetudeop.10no.4/phrase/data10.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/Chopinetudeop.10no.4/phrase/data11.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/Chopinetudeop.10no.4/phrase/data12.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/Chopinetudeop.10no.4/phrase/data13.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/Chopinetudeop.10no.4/phrase/data14.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/Chopinetudeop.10no.4/phrase/data15.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/Chopinetudeop.10no.4/phrase/data16.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/Chopinetudeop.10no.4/phrase/data17.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/Chopinetudeop.10no.4/phrase/data18.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/Chopinetudeop.10no.4/phrase/data19.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/Chopinetudeop.10no.4/phrase/data2.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/Chopinetudeop.10no.4/phrase/data20.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/Chopinetudeop.10no.4/phrase/data21.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/Chopinetudeop.10no.4/phrase/data22.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/Chopinetudeop.10no.4/phrase/data23.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/Chopinetudeop.10no.4/phrase/data24.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/Chopinetudeop.10no.4/phrase/data25.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/Chopinetudeop.10no.4/phrase/data26.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/Chopinetudeop.10no.4/phrase/data27.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/Chopinetudeop.10no.4/phrase/data28.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/Chopinetudeop.10no.4/phrase/data3.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/Chopinetudeop.10no.4/phrase/data4.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/Chopinetudeop.10no.4/phrase/data5.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/Chopinetudeop.10no.4/phrase/data6.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/Chopinetudeop.10no.4/phrase/data7.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/Chopinetudeop.10no.4/phrase/data8.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/Chopinetudeop.10no.4/phrase/data9.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/main.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/phrase/data0.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/phrase/data1.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/phrase/data10.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/phrase/data11.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/phrase/data12.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/phrase/data13.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/phrase/data14.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/phrase/data15.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/phrase/data16.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/phrase/data17.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/phrase/data18.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/phrase/data19.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/phrase/data2.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/phrase/data20.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/phrase/data21.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/phrase/data22.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/phrase/data23.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/phrase/data24.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/phrase/data25.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/phrase/data26.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/phrase/data27.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/phrase/data28.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/phrase/data29.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/phrase/data3.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/phrase/data30.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/phrase/data31.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/phrase/data32.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/phrase/data33.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/phrase/data34.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/phrase/data35.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/phrase/data36.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/phrase/data37.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/phrase/data38.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/phrase/data39.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/phrase/data4.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/phrase/data5.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/phrase/data6.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/phrase/data7.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/phrase/data8.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/phrase/data9.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/testDb/s3.[y.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +198,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 5
+}]]></component>
   <component name="ProjectId" id="2UvVEXpXIHg3jnRaMsWqiEtqdEM" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -37,9 +213,10 @@
     "RunOnceActivity.cidr.known.project.marker": "true",
     "cidr.known.project.marker": "true",
     "dart.analysis.tool.window.visible": "false",
+    "git-widget-placeholder": "master",
     "io.flutter.reload.alreadyRun": "true",
-    "last_opened_file_path": "C:/Users/User/Desktop/박민서 연구 과제/data_annotation_page/application",
-    "settings.editor.selected.configurable": "reference.settingsdialog.textmate.bundles",
+    "last_opened_file_path": "C:/Users/User/Desktop/박민서 연구 과제/data_annotation_page",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
     "show.migrate.to.gradle.popup": "false"
   }
 }]]></component>
@@ -48,15 +225,86 @@
       <recent name="C:\Users\User\AndroidStudioProjects\data_annotation_page\asset\video" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\User\Desktop\박민서 연구 과제\data_annotation_page\server\database" />
       <recent name="C:\Users\User\AndroidStudioProjects\data_annotation_page\asset\video\Chopinetudedae\OriginalData" />
       <recent name="C:\Users\User\AndroidStudioProjects\data_annotation_page\asset\video" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.save_song">
     <configuration name="main.dart" type="FlutterRunConfigurationType" factoryName="Flutter">
       <option name="filePath" value="$PROJECT_DIR$/lib/main.dart" />
       <method v="2" />
     </configuration>
+    <configuration name="db" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="data_annotation_page" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/server/database" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/server/database/db.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="data_annotation_page" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/server_ec2" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/server_ec2/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="save_song" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="data_annotation_page" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/server_ec2/database" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/server_ec2/database/save_song.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.save_song" />
+        <item itemvalue="Python.main" />
+        <item itemvalue="Python.db" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -68,5 +316,16 @@
       <updated>1693819933867</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

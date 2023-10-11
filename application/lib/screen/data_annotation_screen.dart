@@ -134,14 +134,16 @@ class _DataAnnotationScreenState extends State<DataAnnotationScreen> {
 
   renderDrawer(){
 
+    print(song_name_list);
+
     final List<String> song_list = [];
 
-    for(int i=0;i<song_name_list.length;i++){
-      song_list.add(song_name_list[i].toString());
-    }
     setState(() {
-
+      for(int i=0;i<song_name_list.length;i++){
+        song_list.add(song_name_list[i].toString());
+      }
     });
+
     return Drawer(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
@@ -181,11 +183,11 @@ class _DataAnnotationScreenState extends State<DataAnnotationScreen> {
               child: Container(
                 child: ListView.builder(
                   scrollDirection: Axis.vertical,
-                  itemCount: song_name_list.length,
+                  itemCount: song_list.length,
                   itemBuilder: (BuildContext context, int index){
                     return InkWell(
                       onTap: (){
-                        current_song_name = song_name_list[index];
+                        current_song_name = song_list[index];
                         print(current_song_name);
                         setState(() {
                           myFuture = loadPartVideoList(current_song_name);
@@ -210,7 +212,7 @@ class _DataAnnotationScreenState extends State<DataAnnotationScreen> {
                           ),
                           height: 50,
                           child: Center(
-                            child: Text('곡명: ${song_name_list[index]}'),
+                            child: Text('곡명: ${song_list[index]}'),
                           )
                       ),
                     );

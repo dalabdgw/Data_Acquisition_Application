@@ -19,7 +19,7 @@ Future<List> loadSongList() async {
 
   Dio dio = Dio();
 
-  Response response = await dio.get(MYSERVERIP+MYDBPORT+'/load_song_list');
+  Response response = await dio.get(AWSRDSIP+'/load_song_list');
 
   List<dynamic> responseBody = response.data;
   return responseBody;
@@ -29,7 +29,7 @@ Future<List> loadPartVideoList(song_name) async {
 
   Dio dio = Dio();
 
-  Response response = await dio.get(MYSERVERIP+MYDBPORT+'/load_song_part_list',queryParameters: {'song_name' : song_name});
+  Response response = await dio.get(AWSRDSIP+'/load_song_part_list',queryParameters: {'song_name' : song_name});
   List<dynamic> responseBody = response.data;
   return responseBody;
 }
@@ -49,7 +49,7 @@ Future<int?> saveReviewData(song_name, part_num, user_id, music_score, tech_scor
     'articulation_score' : articulation_score
   };
 
-  Response response = await dio.post(MYSERVERIP+MYDBPORT+'/save_review_data', data: json_data);
+  Response response = await dio.post(AWSRDSIP+'/save_review_data', data: json_data);
 
 
   return response.statusCode;
@@ -60,7 +60,7 @@ Future<List> loadReviewData(user_id) async {
 
   Dio dio = Dio();
 
-  Response response = await dio.get(MYSERVERIP+MYDBPORT+'/load_user_review', queryParameters: {'user_id' : user_id});
+  Response response = await dio.get(AWSRDSIP+'/load_user_review', queryParameters: {'user_id' : user_id});
   List<dynamic> responseBody = response.data;
   return responseBody;
 }
@@ -69,7 +69,7 @@ Future<Map<dynamic, List>> loadReviewPartData(user_id, song_name) async {
 
   Dio dio = Dio();
 
-  Response response = await dio.get(MYSERVERIP+MYDBPORT+'/load_part_review', queryParameters: {'user_id' : user_id, 'song_name' : song_name});
+  Response response = await dio.get(AWSRDSIP+'/load_part_review', queryParameters: {'user_id' : user_id, 'song_name' : song_name});
 
   Map<dynamic, List<dynamic>> map = Map.from(response.data);
 
@@ -81,7 +81,7 @@ Future<int?> modifyReviewData() async {
 
   Dio dio = Dio();
 
-  Response response = await dio.post(MYSERVERIP+MYDBPORT);
+  Response response = await dio.post(AWSRDSIP);
 
 
   if(response.statusCode == 200){
