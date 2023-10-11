@@ -8,12 +8,11 @@ import requests
 
 def saveToSongPartDb(song_name, data_path):
 
-    bucket = input('버킷의 이름을 입력해주세요: ')
     location = 'ap-northeast-2'
     s3_client = boto3.client(
         's3',
-        aws_access_key_id=input('access_key_id를 입력해주세요: '),
-        aws_secret_access_key=input('secret_access_key를 입력해주세요: ')
+        aws_access_key_id=access_key,
+        aws_secret_access_key=secret_key,
     )
 
     # S3 파일 업로드 및 url 가져오기
@@ -148,9 +147,25 @@ if __name__ == "__main__":
         aws_secret_access_key='?'
     )
 
+    # user input!
+
     db_user = input('db_user? : ')
     db_password = input('db_paasword? : ')
+    bucket = input('버킷의 이름을 입력해주세요: ')
+    access_key = input('access_key_id를 입력해주세요: ')
+    secret_key = input('secret_access_key를 입력해주세요: ')
 
-    saveToSongPartDb('Chopinetudedae', './Chopinetudedae/phrase')
-    saveToSongPartDb('Chopinetudeop.10no.1', './Chopinetudeop.10no.1/phrase')
-    saveToSongPartDb('Chopinetudeop.10no.4', './Chopinetudeop.10no.4/phrase')
+    while(1):
+        print('예시 입력 입니다.')
+        print("곡제목: 'Chopinetudedae' 곡 저장 경로: './Chopinetudedae/phrase'")
+        print('반드시 곡제목으로 이름이 된 폴더로 지정해야 합니다.')
+        print('0 입력 시 데이터 입력 종료.')
+        song_name = input('입력 할 곡 제목을 입력 해주세요: ')
+        data_path = input('phrase 별로 저장된 폴더 경로를 지정해주세요: ')
+        saveToSongPartDb(song_name, data_path)
+
+        if song_name == 0 or data_path == 0:
+            break
+    #saveToSongPartDb('Chopinetudedae', './Chopinetudedae/phrase')
+    #saveToSongPartDb('Chopinetudeop.10no.1', './Chopinetudeop.10no.1/phrase')
+    #saveToSongPartDb('Chopinetudeop.10no.4', './Chopinetudeop.10no.4/phrase')
