@@ -1,5 +1,6 @@
 import logging
 import boto3
+import pymysql
 from awscli.errorhandler import ClientError
 import os
 import requests
@@ -69,6 +70,53 @@ def saveToSongPartDb(song_name, data_path):
 
     # 노래 이름 넣으면 해당 노래에 대한 파트 정보를 s3와 데이터베이스에 반영해줌.
 
+    def insertSongPartTable(song_name, part_data):
+        # 필요한 변수
+        # 1. song_name
+
+        url_list = part_data['video_url_list']
+        part_seq_list = part_data['part_seq']
+
+        try:
+            # MySQL 데이터베이스에 연결
+            connection = pymysql.connect(host='annotationdb.cszainnq3jgr.ap-northeast-2.rds.amazonaws.com', user=db_user, password=db_password, database='annotationDB')
+            # 커서 생성
+            cursor = connection.cursor()
+            insert_q = """
+                SELECT id FROM song_table WHERE song_name = %s
+            """
+            cursor.execute(insert_q, song_name)
+
+            song_id = cursor.fetchone()[0]
+
+            for i in range(len(url_list)):
+                # 테이블 생성 쿼리 작성
+                insert_query = """
+                        INSERT INTO song_part_table(
+                            song_id,
+                            part_url,
+                            part_seq
+                        ) VALUES (
+                            %s,
+                            %s,
+                            %s
+                        );
+                        """
+                # 테이블 생성 쿼리 실행
+                cursor.execute(insert_query, (song_id, url_list[i], part_seq_list[i]))
+
+            connection.commit()
+
+            print("테이블 'song_part_table'에 정상적으로 입력되었습니다.")
+
+            return '200'
+
+        except pymysql.MySQLError as e:
+            print("MySQL 에러 발생:", e)
+        finally:
+            cursor.close()
+            connection.close()
+
     insertS3Song(song_name, bucket_name=bucket)
     db_data = upload_file_DirToS3(song_name, data_path)
     try:
@@ -76,11 +124,9 @@ def saveToSongPartDb(song_name, data_path):
             'song_name' : song_name,
             'db_data' : db_data
         }
-        url = input('저장 할 db의 url을 입력해주세요: ')
-        port = input('저장 할 db의 port를 입력해주세요: ')
-        response = requests.post('http://'+url+':'+port+'/input_song_part_data', json=json_data)
-        #insertSongPartTable(song_name, db_data)
-        print(response)
+
+        insertSongPartTable(song_name, db_data)
+
     except Exception as e:
         print(e)
         print('DB 오류 발생! saveToSongPartDb 함수 참조!')
@@ -98,9 +144,12 @@ if __name__ == "__main__":
     # 자격 증명
     s3_client = boto3.client(
         's3',
-        aws_access_key_id='AKIA3JFVCDNBC7UAPV7B',
-        aws_secret_access_key='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'
+        aws_access_key_id='?',
+        aws_secret_access_key='?'
     )
+
+    db_user = input('db_user? : ')
+    db_password = input('db_paasword? : ')
 
     saveToSongPartDb('Chopinetudedae', './Chopinetudedae/phrase')
     saveToSongPartDb('Chopinetudeop.10no.1', './Chopinetudeop.10no.1/phrase')
