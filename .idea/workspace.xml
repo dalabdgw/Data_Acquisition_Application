@@ -5,10 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e0dc829a-92df-4fcd-97e8-263a8a82897c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/build/web/main.dart.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/application/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/lib/screen/data_annotation_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/application/lib/screen/data_annotation_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/build/web/.last_build_id" beforeDir="false" afterPath="$PROJECT_DIR$/application/build/web/.last_build_id" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/build/web/assets/fonts/MaterialIcons-Regular.otf" beforeDir="false" afterPath="$PROJECT_DIR$/application/build/web/assets/fonts/MaterialIcons-Regular.otf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/build/web/assets/packages/cupertino_icons/assets/CupertinoIcons.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/application/build/web/assets/packages/cupertino_icons/assets/CupertinoIcons.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/build/web/flutter_service_worker.js" beforeDir="false" afterPath="$PROJECT_DIR$/application/build/web/flutter_service_worker.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/build/web/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/build/web/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/build/web/main.dart.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/application/build/web/main.dart.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web_service(2)/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/web_service(2)/templates/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
