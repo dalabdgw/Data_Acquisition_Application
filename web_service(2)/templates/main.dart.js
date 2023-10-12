@@ -27841,7 +27841,7 @@ arv(){var s=0,r=A.Q(t.j),q
 var $async$arv=A.R(function(a,b){if(a===1)return A.N(b,r)
 while(true)switch(s){case 0:A.fM("\ud638\ucd9c")
 s=3
-return A.V(A.xx(null).Ws(0,"http://127.0.0.1:50000/load_song_list",t.z),$async$arv)
+return A.V(A.xx(null).Ws(0,"http://ec2-15-164-96-193.ap-northeast-2.compute.amazonaws.com:50000/load_song_list",t.z),$async$arv)
 case 3:q=b.a
 s=1
 break
@@ -27852,7 +27852,7 @@ var $async$a_9=A.R(function(b,c){if(b===1)return A.N(c,r)
 while(true)switch(s){case 0:A.fM("\ud638\ucd9c")
 p=t.z
 s=3
-return A.V(A.xx(null).vB(0,"http://127.0.0.1:50000/load_song_part_list",A.aK(["song_name",a],t.N,p),p),$async$a_9)
+return A.V(A.xx(null).vB(0,"http://ec2-15-164-96-193.ap-northeast-2.compute.amazonaws.com:50000/load_song_part_list",A.aK(["song_name",a],t.N,p),p),$async$a_9)
 case 3:q=c.a
 s=1
 break
@@ -27862,7 +27862,7 @@ arL(a,b,c,d,e,f,g){var s=0,r=A.Q(t.bo),q,p
 var $async$arL=A.R(function(h,i){if(h===1)return A.N(i,r)
 while(true)switch(s){case 0:p=t.N
 s=3
-return A.V(A.xx(null).AO(0,"http://127.0.0.1:50000/save_review_data",null,A.aK(["song_name",a,"part_num",b,"user_id",c,"music_score",d,"tech_score",e,"sound_score",f,"articulation_score",g],p,p),null,null,A.awO("POST",null),null,t.z),$async$arL)
+return A.V(A.xx(null).AO(0,"http://ec2-15-164-96-193.ap-northeast-2.compute.amazonaws.com:50000/save_review_data",null,A.aK(["song_name",a,"part_num",b,"user_id",c,"music_score",d,"tech_score",e,"sound_score",f,"articulation_score",g],p,p),null,null,A.awO("POST",null),null,t.z),$async$arL)
 case 3:q=i.c
 s=1
 break
@@ -27872,7 +27872,7 @@ aru(a){var s=0,r=A.Q(t.j),q,p
 var $async$aru=A.R(function(b,c){if(b===1)return A.N(c,r)
 while(true)switch(s){case 0:p=t.z
 s=3
-return A.V(A.xx(null).vB(0,"http://127.0.0.1:50000/load_user_review",A.aK(["user_id",a],t.N,p),p),$async$aru)
+return A.V(A.xx(null).vB(0,"http://ec2-15-164-96-193.ap-northeast-2.compute.amazonaws.com:50000/load_user_review",A.aK(["user_id",a],t.N,p),p),$async$aru)
 case 3:q=c.a
 s=1
 break
@@ -27883,7 +27883,7 @@ var $async$a_a=A.R(function(c,d){if(c===1)return A.N(d,r)
 while(true)switch(s){case 0:p=t.z
 o=A
 s=3
-return A.V(A.xx(null).vB(0,"http://127.0.0.1:50000/load_part_review",A.aK(["user_id",a,"song_name",b],t.N,p),p),$async$a_a)
+return A.V(A.xx(null).vB(0,"http://ec2-15-164-96-193.ap-northeast-2.compute.amazonaws.com:50000/load_part_review",A.aK(["user_id",a,"song_name",b],t.N,p),p),$async$a_a)
 case 3:q=o.a8z(d.a,p,t.j)
 s=1
 break
