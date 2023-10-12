@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="e0dc829a-92df-4fcd-97e8-263a8a82897c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/application/build/web/main.dart.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/deploy version/application servertest/lib/server_info.dart" beforeDir="false" afterPath="$PROJECT_DIR$/deploy version/application servertest/lib/server_info.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/database/database_server.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/database/database_server.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web_service/template" beforeDir="false" afterPath="$PROJECT_DIR$/web_service/template" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web_service/template/flutter_service_worker.js" beforeDir="false" afterPath="$PROJECT_DIR$/web_service/template/flutter_service_worker.js" afterDir="false" />

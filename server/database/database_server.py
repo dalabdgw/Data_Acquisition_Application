@@ -9,7 +9,7 @@ def create_app():
     print('AWS RDS 정보를 입력하셔야 합니다.')
     print('HOST, USER, PASSWORD 순으로 입력 해주세요!')
 
-    AWS_RDS_HOST, AWS_RDS_USER, AWS_RDS_PASSWORD = map(input('스페이스 바로 띄어서 입력하기: ').split(' '))
+    AWS_RDS_HOST, AWS_RDS_USER, AWS_RDS_PASSWORD = input('스페이스 바로 띄어서 입력하기: ').split(' ')
 
     AWS_RDS_DATABASE_NAME = 'annotationDB'
 
