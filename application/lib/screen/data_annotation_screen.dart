@@ -1,15 +1,10 @@
-import 'package:async/async.dart';
 import 'package:data_annotation_page/screen/confirm_screen.dart';
-import 'package:data_annotation_page/screen/data_annotation_connection_func.dart';
-import 'package:data_annotation_page/screen/admin_screen/enroll_song_screen.dart';
 import 'package:data_annotation_page/screen/review_data_screen.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-import 'package:syncfusion_flutter_charts/charts.dart';
 import 'package:video_player/video_player.dart';
-
-import '../component.dart';
-import '../server_info.dart';
+import 'package:data_annotation_page/component.dart';
+import 'package:data_annotation_page/server_info.dart';
 
 class DataAnnotationScreen extends StatefulWidget {
   const DataAnnotationScreen({Key? key}) : super(key: key);
@@ -22,8 +17,6 @@ class _DataAnnotationScreenState extends State<DataAnnotationScreen> {
 
   late Future myFuture;
   late Future song_list_future;
-
-  Dio dio = Dio();
 
   late VideoPlayerController _videoController; // for video player
 
@@ -587,6 +580,8 @@ class _DataAnnotationScreenState extends State<DataAnnotationScreen> {
   void initState() {
 
     song_list_future = loadSongList();
+
+    current_song_name = 'Chopinetudedae';
     myFuture = loadPartVideoList(current_song_name);
 
     _videoController = VideoPlayerController.asset('asset/video/bee.mp4')
@@ -597,5 +592,70 @@ class _DataAnnotationScreenState extends State<DataAnnotationScreen> {
     super.initState();
   }
 
+
+  // 서버 곡 리스트를 불러온다.
+  Future<List> loadSongList() async {
+
+    print('호출');
+    Dio dio = Dio();
+
+    Response response = await dio.get(AWSRDSIP+'/load_song_list');
+
+    List<dynamic> responseBody = response.data;
+    dio.close();
+    return responseBody;
+  }
+// 곡에 대한 part 동영상을 불러온다.
+  Future<List> loadPartVideoList(song_name) async {
+    print('호출');
+    Dio dio = Dio();
+
+    Response response = await dio.get(AWSRDSIP+'/load_song_part_list',queryParameters: {'song_name' : song_name});
+    List<dynamic> responseBody = response.data;
+    dio.close();
+    return responseBody;
+  }
+
+//평가 데이터 자세히 조회하기
+  Future<Map<dynamic, List>> loadReviewPartData(user_id, song_name) async {
+
+    Dio dio = Dio();
+
+    Response response = await dio.get(AWSRDSIP+'/load_part_review', queryParameters: {'user_id' : user_id, 'song_name' : song_name});
+
+    Map<dynamic, List<dynamic>> map = Map.from(response.data);
+
+    dio.close();
+    return map;
+  }
+
+  // 평가 데이터 수정하기
+  Future<int?> modifyReviewData() async {
+
+    Dio dio = Dio();
+
+    Response response = await dio.post(AWSRDSIP);
+
+
+    if(response.statusCode == 200){
+      /*
+    return data 형식
+     {
+      "name" : "박민서",
+      "song_name" : "곡명",
+      "part_num" : "1번째 파트",
+      "music_score" : "음악점수",
+      "tech_score" : "기술점수",
+      "sound_score" : "소리점수",
+      "articulation_score" : "아티큘레이션 점수"
+     }
+     */
+      dio.close();
+      return 200;
+    }else{
+      dio.close();
+      return response.statusCode;
+    }
+  }
 
 }

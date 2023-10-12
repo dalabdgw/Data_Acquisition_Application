@@ -1,8 +1,7 @@
-import 'package:data_annotation_page/component.dart';
-import 'package:data_annotation_page/screen/data_annotation_connection_func.dart';
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
-
+import 'package:data_annotation_page/server_info.dart';
 import 'confirm_screen.dart';
 
 class ReviewDataScreen extends StatefulWidget {
@@ -263,5 +262,26 @@ class _ReviewDataScreenState extends State<ReviewDataScreen> {
         },
       );
     });
+  }
+  // 평가 데이터를 조회하기
+  Future<List> loadReviewData(user_id) async {
+
+    Dio dio = Dio();
+
+    Response response = await dio.get(AWSRDSIP+'/load_user_review', queryParameters: {'user_id' : user_id});
+    List<dynamic> responseBody = response.data;
+    dio.close();
+    return responseBody;
+  }
+  Future<Map<dynamic, List>> loadReviewPartData(user_id, song_name) async {
+
+    Dio dio = Dio();
+
+    Response response = await dio.get(AWSRDSIP+'/load_part_review', queryParameters: {'user_id' : user_id, 'song_name' : song_name});
+
+    Map<dynamic, List<dynamic>> map = Map.from(response.data);
+
+    dio.close();
+    return map;
   }
 }

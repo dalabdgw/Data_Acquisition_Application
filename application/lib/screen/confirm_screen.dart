@@ -1,6 +1,8 @@
-import 'package:data_annotation_page/screen/data_annotation_connection_func.dart';
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
+
+import 'package:data_annotation_page/server_info.dart';
 
 class ConfirmScreen extends StatefulWidget {
   String song_name = '';
@@ -164,6 +166,26 @@ class _ConfirmScreenState extends State<ConfirmScreen> {
         )
       ),
     );
+  }
+  // 평가 데이터를 저장하기
+  Future<int?> saveReviewData(song_name, part_num, user_id, music_score, tech_score, sound_score, articulation_score) async {
+
+    Dio dio = Dio();
+
+    Map<String, String> json_data = {
+      'song_name' : song_name,
+      'part_num' : part_num,
+      'user_id' : user_id,
+      'music_score' : music_score,
+      'tech_score' : tech_score,
+      'sound_score' : sound_score,
+      'articulation_score' : articulation_score
+    };
+
+    Response response = await dio.post(AWSRDSIP+'/save_review_data', data: json_data);
+
+    dio.close();
+    return response.statusCode;
   }
 }
 class ChartData {
