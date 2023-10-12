@@ -84,13 +84,18 @@ class _DataAnnotationScreenState extends State<DataAnnotationScreen> {
         child: FutureBuilder(
           future: song_list_future,
           builder: (context, snapshot1){
-            if(snapshot1.hasData){
+
+            if(snapshot1.connectionState == ConnectionState.done){
+
               song_name_list = snapshot1.data;
+
               return FutureBuilder(
                 future: myFuture,
                 builder: (context, snapshot){
-                  if(snapshot.hasData){
+                  if(snapshot.connectionState == ConnectionState.done){
+
                     video_part = snapshot.data;
+
                     return Container(
                         width: MediaQuery.of(context).size.width,
                         height: MediaQuery.of(context).size.height,
@@ -123,7 +128,19 @@ class _DataAnnotationScreenState extends State<DataAnnotationScreen> {
                 },
               );
             }else{
-              return CircularProgressIndicator();
+              return Container(
+                width: MediaQuery.of(context).size.width,
+                height: MediaQuery.of(context).size.height,
+                child: Center(
+                  child: Column(
+                    children: [
+                      Text('페이지 로딩 중'),
+                      SizedBox(height: 10.0,),
+                      CircularProgressIndicator()
+                    ],
+                  ),
+                ),
+              );
             }
           },
         )
@@ -132,17 +149,15 @@ class _DataAnnotationScreenState extends State<DataAnnotationScreen> {
 
     );
   }
-
   renderDrawer(){
-
-    print(song_name_list);
 
     final List<String> song_list = [];
 
+    for(int i=0;i<song_name_list.length;i++){
+      song_list.add(song_name_list[i].toString());
+    }
+
     setState(() {
-      for(int i=0;i<song_name_list.length;i++){
-        song_list.add(song_name_list[i].toString());
-      }
     });
 
     return Drawer(
