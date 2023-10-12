@@ -1,3 +1,9 @@
+# DATABASE ERD
+
+| TABLE      ||
+|------------|----|
+| SONG_TABLE ||
+
 # save_song.py 
 <hr>
 
