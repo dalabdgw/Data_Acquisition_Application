@@ -1,4 +1,5 @@
 from flask import Flask, jsonify, request
+from flask_cors import CORS
 import pymysql
 from datetime import datetime
 
@@ -14,7 +15,7 @@ def create_app():
     AWS_RDS_DATABASE_NAME = 'annotationDB'
 
     app = Flask(__name__)
-
+    CORS(app)
     # db 접속하기 위한 변수
     app.DB_HOST = AWS_RDS_HOST
     app.DB_USER =AWS_RDS_USER
