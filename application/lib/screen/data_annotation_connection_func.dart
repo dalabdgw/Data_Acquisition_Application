@@ -17,6 +17,7 @@ import 'package:dio/dio.dart';
 // 서버 곡 리스트를 불러온다.
 Future<List> loadSongList() async {
 
+  print('호출');
   Dio dio = Dio();
 
   Response response = await dio.get(AWSRDSIP+'/load_song_list');
@@ -26,7 +27,7 @@ Future<List> loadSongList() async {
  }
 // 곡에 대한 part 동영상을 불러온다.
 Future<List> loadPartVideoList(song_name) async {
-
+  print('호출');
   Dio dio = Dio();
 
   Response response = await dio.get(AWSRDSIP+'/load_song_part_list',queryParameters: {'song_name' : song_name});

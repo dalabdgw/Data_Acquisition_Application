@@ -5,7 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e0dc829a-92df-4fcd-97e8-263a8a82897c" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/build/web/main.dart.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/application/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/lib/screen/data_annotation_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/application/lib/screen/data_annotation_screen.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

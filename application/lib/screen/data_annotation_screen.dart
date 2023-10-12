@@ -85,14 +85,14 @@ class _DataAnnotationScreenState extends State<DataAnnotationScreen> {
           future: song_list_future,
           builder: (context, snapshot1){
 
-            if(snapshot1.connectionState == ConnectionState.done){
+            if(snapshot1.data != null){
 
               song_name_list = snapshot1.data;
 
               return FutureBuilder(
                 future: myFuture,
                 builder: (context, snapshot){
-                  if(snapshot.connectionState == ConnectionState.done){
+                  if(snapshot.data != null){
 
                     video_part = snapshot.data;
 
@@ -145,102 +145,89 @@ class _DataAnnotationScreenState extends State<DataAnnotationScreen> {
           },
         )
       ),
-      endDrawer: renderDrawer(),
-
-    );
-  }
-  renderDrawer(){
-
-    final List<String> song_list = [];
-
-    for(int i=0;i<song_name_list.length;i++){
-      song_list.add(song_name_list[i].toString());
-    }
-
-    setState(() {
-    });
-
-    return Drawer(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Expanded(
-              flex: 10,
-              child: Container(
-                child: DrawerHeader(
-                  child: Text('~~~님'),
+      endDrawer: Drawer(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Expanded(
+                flex: 10,
+                child: Container(
+                  child: DrawerHeader(
+                    child: Text('~~~님'),
+                  ),
                 ),
               ),
-            ),
-            Expanded(
-              flex: 5,
-              child: InkWell(
-                onTap: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (_)=>ReviewDataScreen()));
-                },
-                child: Container(
-                  width: MediaQuery.of(context).size.width,
-                  child: Center(
-                    child: Text('내 평가 확인하기'),
-                  )
-                )
-              )
-            ),
-            Expanded(
-              flex: 5,
-              child: Container(
-                padding: EdgeInsets.only(left: 10.0),
-                child: Text('Song List', textAlign: TextAlign.start, style: TextStyle(fontSize: 20.0),),
-              ),
-            ),
-            Expanded(
-              flex: 80,
-              child: Container(
-                child: ListView.builder(
-                  scrollDirection: Axis.vertical,
-                  itemCount: song_list.length,
-                  itemBuilder: (BuildContext context, int index){
-                    return InkWell(
+              Expanded(
+                  flex: 5,
+                  child: InkWell(
                       onTap: (){
-                        current_song_name = song_list[index];
-                        print(current_song_name);
-                        setState(() {
-                          myFuture = loadPartVideoList(current_song_name);
-                          Navigator.pop(context);
-                          _videoController = VideoPlayerController.asset('asset/video/bee.mp4')
-                            ..initialize().then((_) {
-                              // Ensure the first frame is shown after the video is initialized, even before the play button has been pressed.
-                              setState(() {});
-                            });
-                          videoCursor = 0;
-                        });
-                        
-                        //알림 창 뜨게하기
-                        renderSongSelectAlert(current_song_name, context);
+                        Navigator.push(context, MaterialPageRoute(builder: (_)=>ReviewDataScreen()));
                       },
                       child: Container(
-                          margin: EdgeInsets.only(left: 20.0, right: 20.0),
-                          decoration: BoxDecoration(
-                              border: Border(
-                                  bottom: BorderSide(
-                                      width: 1,
-                                      color: Colors.grey.shade300
-                                  )
-                              )
-                          ),
-                          height: 50,
+                          width: MediaQuery.of(context).size.width,
                           child: Center(
-                            child: Text('곡명: ${song_list[index]}'),
+                            child: Text('내 평가 확인하기'),
                           )
-                      ),
-                    );
-                  },
+                      )
+                  )
+              ),
+              Expanded(
+                flex: 5,
+                child: Container(
+                  padding: EdgeInsets.only(left: 10.0),
+                  child: Text('Song List', textAlign: TextAlign.start, style: TextStyle(fontSize: 20.0),),
                 ),
               ),
-            )
-          ],
-        )
+              Expanded(
+                flex: 80,
+                child: Container(
+                  child: ListView.builder(
+                    scrollDirection: Axis.vertical,
+                    itemCount: song_name_list.length,
+                    itemBuilder: (BuildContext context, int index){
+                      return InkWell(
+                        onTap: (){
+                          current_song_name = song_name_list[index];
+                          print(current_song_name);
+                          setState(() {
+                            myFuture = loadPartVideoList(current_song_name);
+                            Navigator.pop(context);
+                            _videoController = VideoPlayerController.asset('asset/video/bee.mp4')
+                              ..initialize().then((_) {
+                                // Ensure the first frame is shown after the video is initialized, even before the play button has been pressed.
+                                setState(() {});
+                              });
+                            videoCursor = 0;
+                          });
+
+                          //알림 창 뜨게하기
+                          renderSongSelectAlert(current_song_name, context);
+                        },
+                        child: Container(
+                            margin: EdgeInsets.only(left: 20.0, right: 20.0),
+                            decoration: BoxDecoration(
+                                border: Border(
+                                    bottom: BorderSide(
+                                        width: 1,
+                                        color: Colors.grey.shade300
+                                    )
+                                )
+                            ),
+                            height: 50,
+                            child: Center(
+                              child: Text('곡명: ${song_name_list[index]}'),
+                            )
+                        ),
+                      );
+                    },
+                  ),
+                ),
+              )
+            ],
+          )
+      ),
+
     );
   }
   // 비디오 위젯 렌더링!
@@ -598,6 +585,7 @@ class _DataAnnotationScreenState extends State<DataAnnotationScreen> {
   }
   @override
   void initState() {
+
     song_list_future = loadSongList();
     myFuture = loadPartVideoList(current_song_name);
 
