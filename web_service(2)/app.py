@@ -7,7 +7,7 @@ from flask import render_template
 app = Flask(__name__, )
 # app = Flask(__name__, template_folder='templates')
 
-FLUTTER_WEB_APP = 'web_dir'
+FLUTTER_WEB_APP = 'templates'
 
 @app.route('/')
 def render_page():
