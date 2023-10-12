@@ -1,22 +1,34 @@
 from flask import Flask, jsonify, request
 import pymysql
 from datetime import datetime
+from setting import DB_NAME, DB_HOST, DB_USER, DB_PASSWORD
 
+def create_app():
 
+    # db 연결시 rds 정보 필요
 
-def create_app(DB_HOST, DB_USER, DB_PASSWORD):
+    print('AWS RDS 정보를 입력하셔야 합니다.')
+    print('HOST, USER, PASSWORD 순으로 입력 해주세요!')
+
+    AWS_RDS_HOST, AWS_RDS_USER, AWS_RDS_PASSWORD = map(input('스페이스 바로 띄어서 입력하기: ').split(' '))
+
+    AWS_RDS_DATABASE_NAME = 'annotationDB'
 
     app = Flask(__name__)
-    app.DB_HOST = DB_HOST
-    app.DB_USER = DB_USER
-    app.DB_PASSWORD =DB_PASSWORD
 
+    # db 접속하기 위한 변수
+    app.DB_HOST = AWS_RDS_HOST
+    app.DB_USER =AWS_RDS_USER
+    app.DB_PASSWORD = AWS_RDS_PASSWORD
+    app.DB_NAME = AWS_RDS_DATABASE_NAME
+
+    # db connector 정의
     def connect_to_db():
         # 데이터베이스 연결 설정
         db_host = app.DB_HOST
         db_user = app.DB_USER
         db_password = app.DB_PASSWORD
-        database = 'annotationDB'
+        database = app.DB_NAME
 
         # 데이터베이스 연결
         connection = pymysql.connect(host=db_host, user=db_user, password=db_password, database=database)
@@ -54,6 +66,7 @@ def create_app(DB_HOST, DB_USER, DB_PASSWORD):
             cursor.close()
             connection.close()
 
+
     # table 만들기
     def makeSongListTable():
         try:
@@ -82,7 +95,6 @@ def create_app(DB_HOST, DB_USER, DB_PASSWORD):
         finally:
             cursor.close()
             connection.close()
-
     def makeSongPartListTable():
         try:
             # MySQL 데이터베이스에 연결
@@ -114,7 +126,6 @@ def create_app(DB_HOST, DB_USER, DB_PASSWORD):
         finally:
             cursor.close()
             connection.close()
-
     def makeReviewTable():
         try:
             # MySQL 데이터베이스에 연결
@@ -191,7 +202,6 @@ def create_app(DB_HOST, DB_USER, DB_PASSWORD):
         finally:
             cursor.close()
             connection.close()
-
     # song_name을 기반으로 song_id값을 추출한다.
     # part_data : 파트 정보 , 튜플 값을 갖기! part_url, part_seq 순으로!
     def insertSongPartTable(song_name, part_data):
@@ -240,14 +250,12 @@ def create_app(DB_HOST, DB_USER, DB_PASSWORD):
         finally:
             cursor.close()
             connection.close()
-
     '''
     song_name : song_name을 기반으로 song_id 값 추출
     part_num : 몇번 째 파트 인지 기록하기위해
     user_id : 어떤 유저가 데이터를 저장하는지에 대해
     그외 나머지 점수.
     '''
-
     def insertReviewTable(song_name, part_num, user_id, music_score, tech_score, sound_score, articulation_score):
         # 필요한 변수
         # 1. song_name
@@ -319,7 +327,6 @@ def create_app(DB_HOST, DB_USER, DB_PASSWORD):
         finally:
             cursor.close()
             connection.close()
-
     # 데이터 조회 함수
     # song_name : 곡 이름에 해당하는 파트 별 동영상 추출!
     def loadSongPartTable(song_name):
@@ -370,7 +377,6 @@ def create_app(DB_HOST, DB_USER, DB_PASSWORD):
         finally:
             cursor.close()
             connection.close()
-
     # user_id : 유저 id를 기반으로 리뷰 데이터 수집!
     def loadReviewDataTable(user_id):
         try:
@@ -405,7 +411,6 @@ def create_app(DB_HOST, DB_USER, DB_PASSWORD):
         finally:
             cursor.close()
             connection.close()
-
     # user_id : 유저 id를 기반으로 곡 정보 출력
     def loadReviewSong(user_id):
         try:
@@ -438,7 +443,6 @@ def create_app(DB_HOST, DB_USER, DB_PASSWORD):
         finally:
             cursor.close()
             connection.close()
-
     def loadReviewPart(user_id, song_name):
         try:
             # MySQL 데이터베이스에 연결
@@ -492,7 +496,6 @@ def create_app(DB_HOST, DB_USER, DB_PASSWORD):
         finally:
             cursor.close()
             connection.close()
-
     def loadSongName():
         try:
             # MySQL 데이터베이스에 연결
@@ -522,10 +525,6 @@ def create_app(DB_HOST, DB_USER, DB_PASSWORD):
     makeSongListTable()
     makeSongPartListTable()
     makeReviewTable()
-
-    insertSongTable('Chopinetudedae')
-    insertSongTable('Chopinetudeop.10no.1')
-    insertSongTable('Chopinetudeop.10no.4')
 
     @app.route('/ping', methods=['GET'])
     def ping():
@@ -579,36 +578,11 @@ def create_app(DB_HOST, DB_USER, DB_PASSWORD):
 
         return jsonify(part_review_list)
 
-    @app.route('/input_song_data', methods=['POST'])
-    def input_song_data():
-
-        return 200
-
-    @app.route('/input_song_part_data', methods=['POST'])
-    def input_song_part_data():
-
-        song_data = request.json
-
-        song_name = song_data['song_name']
-        db_data = song_data['da_data']
-
-        insertSongPartTable(song_name, db_data)
-
-        return 200
-
-
-
     return app
 
-# db connector
+
+
 
 
 if __name__ == "__main__":
-
-    DB_HOST = '127.0.0.1'
-    DB_USER = 'root'
-    DB_PASSWORD = '2019212950'
-
     create_app().run(host='0.0.0.0', port=50000, debug=True)
-
-

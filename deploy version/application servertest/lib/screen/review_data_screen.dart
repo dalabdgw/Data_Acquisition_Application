@@ -1,3 +1,4 @@
+import 'package:data_annotation_page/component.dart';
 import 'package:data_annotation_page/screen/data_annotation_connection_func.dart';
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
@@ -36,14 +37,11 @@ class _ReviewDataScreenState extends State<ReviewDataScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: Container(
-          padding: EdgeInsets.all(5.0),
-          child: ClipRRect(
-            borderRadius: BorderRadius.circular(200.0),
-            child: Image.asset('asset/image/logo.jpeg',
-              fit: BoxFit.fitWidth,
-            ),
-          ),
+        leading: IconButton(
+          onPressed: (){
+            Navigator.pop(context);
+          },
+          icon: Icon(Icons.arrow_back, color: Colors.black,),
         ),
         title: Text('내가 평가한 곡 리스트', style: TextStyle(color: Colors.black),),
         backgroundColor: Color(0x00000000),

@@ -1,13 +1,14 @@
 import 'package:async/async.dart';
 import 'package:data_annotation_page/screen/confirm_screen.dart';
 import 'package:data_annotation_page/screen/data_annotation_connection_func.dart';
-import 'package:data_annotation_page/screen/enroll_song_screen.dart';
+import 'package:data_annotation_page/screen/admin_screen/enroll_song_screen.dart';
 import 'package:data_annotation_page/screen/review_data_screen.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 import 'package:video_player/video_player.dart';
 
+import '../component.dart';
 import '../server_info.dart';
 
 class DataAnnotationScreen extends StatefulWidget {
@@ -199,6 +200,9 @@ class _DataAnnotationScreenState extends State<DataAnnotationScreen> {
                             });
                           videoCursor = 0;
                         });
+                        
+                        //알림 창 뜨게하기
+                        renderSongSelectAlert(current_song_name, context);
                       },
                       child: Container(
                           margin: EdgeInsets.only(left: 20.0, right: 20.0),
@@ -342,73 +346,92 @@ class _DataAnnotationScreenState extends State<DataAnnotationScreen> {
       ),
       margin: EdgeInsets.all(20.0),
       height: MediaQuery.of(context).size.width > 700.0 ?MediaQuery.of(context).size.height -100 : 450.0,
-      child: Form(
-        key: formKey,
-        child: Padding(
-          padding: EdgeInsets.all(16.0),
-          child: Column(
-            children: [
-              renderTextFormField(
-                label: '음악성',
-                onSaved: (val) {
-                  setState(() {
-                    musicScore = val;
-                  });
-                },
-                validator: (text) {
-                  if (text == null || text.isEmpty) {
-                    return 'Can\'t be empty';
-                  }
-                  return null;
-                },
-              ),
-              renderTextFormField(
-                label: '테크닉',
-                onSaved: (val) {
-                  setState(() {
-                    techScore = val;
-                  });
-                },
-                validator: (text) {
-                  if (text == null || text.isEmpty) {
-                    return 'Can\'t be empty';
-                  }
-                  return null;
-                },
-              ),
-              renderTextFormField(
-                label: '소리',
-                onSaved: (val) {
-                  setState(() {
-                    soundScore = val;
-                  });
-                },
-                validator: (text) {
-                  if (text == null || text.isEmpty) {
-                    return 'Can\'t be empty';
-                  }
-                  return null;
-                },
-              ),
-              renderTextFormField(
-                label: '아티큘레이션',
-                onSaved: (val) {
-                  setState(() {
-                    articulation = val;
-                  });
-                },
-                validator: (text) {
-                  if (text == null || text.isEmpty) {
-                    return 'Can\'t be empty';
-                  }
-                  return null;
-                },
-              ),
-              renderButton(),
-            ],
+      child: Column(
+        children: [
+          Expanded(
+            flex: 1,
+            child: Container(
+              padding: EdgeInsets.only(top: 20.0),
+              child: Text('채점표', style: TextStyle(fontSize: 20.0),),
+            ),
           ),
-        ),
-      ),
+          Expanded(
+            flex: 9,
+            child: Container(
+              child: Form(
+                key: formKey,
+                child: Padding(
+                  padding: EdgeInsets.all(16.0),
+                  child: SingleChildScrollView(
+                    scrollDirection: Axis.vertical,
+                    child: Column(
+                      children: [
+                        renderTextFormField(
+                          label: '음악성',
+                          onSaved: (val) {
+                            setState(() {
+                              musicScore = val;
+                            });
+                          },
+                          validator: (text) {
+                            if (text == null || text.isEmpty) {
+                              return 'Can\'t be empty';
+                            }
+                            return null;
+                          },
+                        ),
+                        renderTextFormField(
+                          label: '테크닉',
+                          onSaved: (val) {
+                            setState(() {
+                              techScore = val;
+                            });
+                          },
+                          validator: (text) {
+                            if (text == null || text.isEmpty) {
+                              return 'Can\'t be empty';
+                            }
+                            return null;
+                          },
+                        ),
+                        renderTextFormField(
+                          label: '소리',
+                          onSaved: (val) {
+                            setState(() {
+                              soundScore = val;
+                            });
+                          },
+                          validator: (text) {
+                            if (text == null || text.isEmpty) {
+                              return 'Can\'t be empty';
+                            }
+                            return null;
+                          },
+                        ),
+                        renderTextFormField(
+                          label: '아티큘레이션',
+                          onSaved: (val) {
+                            setState(() {
+                              articulation = val;
+                            });
+                          },
+                          validator: (text) {
+                            if (text == null || text.isEmpty) {
+                              return 'Can\'t be empty';
+                            }
+                            return null;
+                          },
+                        ),
+                        renderButton(),
+                      ],
+                    ),
+                  )
+                ),
+              ),
+            ),
+          ),
+        ],
+      )
     );
   }
 
@@ -445,6 +468,7 @@ class _DataAnnotationScreenState extends State<DataAnnotationScreen> {
       ],
     );
   }
+
   // form필드 버튼
   renderButton() {
     return ElevatedButton(
