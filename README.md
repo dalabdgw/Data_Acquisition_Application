@@ -8,10 +8,6 @@
 
 
 
-## USE CASE
-![usecase](https://github.com/dalabdgw/Data_Acquisition_Application/assets/135303032/8b0f7fde-f617-465d-979f-3ef06a32fa06)
 
 
 
-
-## 
