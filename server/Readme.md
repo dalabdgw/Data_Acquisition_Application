@@ -44,6 +44,7 @@
 <hr>
 
 ### ERD  (2023.10.12)
+![5](https://github.com/dalabdgw/Data_Acquisition_Application/assets/135303032/33025671-a8d1-4b57-9f15-83d18054849b)
 
     
 <hr>
