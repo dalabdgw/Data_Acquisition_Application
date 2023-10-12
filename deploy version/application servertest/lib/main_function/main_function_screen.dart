@@ -183,7 +183,7 @@ class _MainFunctionScreenState extends State<MainFunctionScreen> {
 
                                                           // Flask API 엔드포인트에 파일을 업로드합니다.
                                                           Response response = await dio.post(
-                                                            AWSRDSIP+'/upload',
+                                                            AWSEC2IP+'/upload',
                                                             data: formData,
                                                           );
                                                           if (response.statusCode == 200){
@@ -616,7 +616,7 @@ class _MainFunctionScreenState extends State<MainFunctionScreen> {
       'sound_score' : sound_score,
       'articulation' : articulation
     };
-      final response = await dio.post('${AWSRDSIP}/store_score_data', data: json_data);
+      final response = await dio.post('${AWSEC2IP}/store_score_data', data: json_data);
       return response.statusCode;
   }
 

@@ -5,12 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e0dc829a-92df-4fcd-97e8-263a8a82897c" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/build/web/main.dart.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/database/database_server.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/database/database_server.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_service/template" beforeDir="false" afterPath="$PROJECT_DIR$/web_service/template" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_service/template/flutter_service_worker.js" beforeDir="false" afterPath="$PROJECT_DIR$/web_service/template/flutter_service_worker.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_service/template/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/web_service/template/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_service/template/main.dart.js" beforeDir="false" afterPath="$PROJECT_DIR$/web_service/template/main.dart.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application servertest/lib/main_function/data_check_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/deploy version/application servertest/lib/main_function/data_check_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application servertest/lib/main_function/main_function_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/deploy version/application servertest/lib/main_function/main_function_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application servertest/lib/screen/data_annotation_connection_func.dart" beforeDir="false" afterPath="$PROJECT_DIR$/deploy version/application servertest/lib/screen/data_annotation_connection_func.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application servertest/lib/server_info.dart" beforeDir="false" afterPath="$PROJECT_DIR$/deploy version/application servertest/lib/server_info.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web_service/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/web_service/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web_service/template" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web_service/web/assets/fonts/MaterialIcons-Regular.otf" beforeDir="false" afterPath="$PROJECT_DIR$/web_service/web/assets/fonts/MaterialIcons-Regular.otf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web_service/web/flutter_service_worker.js" beforeDir="false" afterPath="$PROJECT_DIR$/web_service/web/flutter_service_worker.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web_service/web/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/web_service/web/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web_service/web/main.dart.js" beforeDir="false" afterPath="$PROJECT_DIR$/web_service/web/main.dart.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
