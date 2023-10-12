@@ -5,7 +5,268 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e0dc829a-92df-4fcd-97e8-263a8a82897c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/web_service(2)/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/web_service(2)/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/.metadata" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/analysis_options.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/android/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/android/app/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/android/app/src/debug/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/android/app/src/main/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/android/app/src/main/kotlin/com/minseo/smart/data_annotation_page/MainActivity.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/android/app/src/main/res/drawable-v21/launch_background.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/android/app/src/main/res/drawable/launch_background.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/android/app/src/main/res/mipmap-hdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/android/app/src/main/res/mipmap-mdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/android/app/src/main/res/values-night/styles.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/android/app/src/main/res/values/styles.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/android/app/src/profile/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/android/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/android/gradle.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/android/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/android/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/asset/image/description_img/1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/asset/image/description_img/2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/asset/image/description_img/3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/asset/image/description_img/4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/asset/image/logo.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/asset/video/Chopinetudedae/OriginalData/.ipynb_checkpoints/ffmpeg_fun-checkpoint.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/asset/video/Chopinetudedae/OriginalData/ffmpeg_fun.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/asset/video/Chopinetudedae/OriginalData/video.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/asset/video/Chopinetudedae/phrase/data0.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/asset/video/Chopinetudedae/phrase/data1.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/asset/video/Chopinetudedae/phrase/data10.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/asset/video/Chopinetudedae/phrase/data11.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/asset/video/Chopinetudedae/phrase/data12.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/asset/video/Chopinetudedae/phrase/data13.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/asset/video/Chopinetudedae/phrase/data14.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/asset/video/Chopinetudedae/phrase/data15.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/asset/video/Chopinetudedae/phrase/data16.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/asset/video/Chopinetudedae/phrase/data17.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/asset/video/Chopinetudedae/phrase/data18.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/asset/video/Chopinetudedae/phrase/data19.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/asset/video/Chopinetudedae/phrase/data2.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/asset/video/Chopinetudedae/phrase/data20.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/asset/video/Chopinetudedae/phrase/data21.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/asset/video/Chopinetudedae/phrase/data22.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/asset/video/Chopinetudedae/phrase/data23.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/asset/video/Chopinetudedae/phrase/data24.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/asset/video/Chopinetudedae/phrase/data25.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/asset/video/Chopinetudedae/phrase/data26.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/asset/video/Chopinetudedae/phrase/data27.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/asset/video/Chopinetudedae/phrase/data28.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/asset/video/Chopinetudedae/phrase/data29.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/asset/video/Chopinetudedae/phrase/data3.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/asset/video/Chopinetudedae/phrase/data30.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/asset/video/Chopinetudedae/phrase/data31.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/asset/video/Chopinetudedae/phrase/data32.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/asset/video/Chopinetudedae/phrase/data33.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/asset/video/Chopinetudedae/phrase/data34.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/asset/video/Chopinetudedae/phrase/data35.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/asset/video/Chopinetudedae/phrase/data36.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/asset/video/Chopinetudedae/phrase/data37.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/asset/video/Chopinetudedae/phrase/data38.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/asset/video/Chopinetudedae/phrase/data39.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/asset/video/Chopinetudedae/phrase/data4.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/asset/video/Chopinetudedae/phrase/data5.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/asset/video/Chopinetudedae/phrase/data6.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/asset/video/Chopinetudedae/phrase/data7.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/asset/video/Chopinetudedae/phrase/data8.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/asset/video/Chopinetudedae/phrase/data9.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/asset/video/Chopinetudedae/phrase/phrase data.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/asset/video/Chopinetudeop.10no.1/OriginalData/.ipynb_checkpoints/ffmpeg_fun-checkpoint.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/asset/video/Chopinetudeop.10no.1/OriginalData/data0.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/asset/video/Chopinetudeop.10no.1/OriginalData/data1.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/asset/video/Chopinetudeop.10no.1/OriginalData/data10.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/asset/video/Chopinetudeop.10no.1/OriginalData/data11.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/asset/video/Chopinetudeop.10no.1/OriginalData/data12.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/asset/video/Chopinetudeop.10no.1/OriginalData/data13.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/asset/video/Chopinetudeop.10no.1/OriginalData/data14.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/asset/video/Chopinetudeop.10no.1/OriginalData/data15.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/asset/video/Chopinetudeop.10no.1/OriginalData/data16.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/asset/video/Chopinetudeop.10no.1/OriginalData/data17.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/asset/video/Chopinetudeop.10no.1/OriginalData/data2.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/asset/video/Chopinetudeop.10no.1/OriginalData/data3.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/asset/video/Chopinetudeop.10no.1/OriginalData/data4.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/asset/video/Chopinetudeop.10no.1/OriginalData/data5.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/asset/video/Chopinetudeop.10no.1/OriginalData/data6.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/asset/video/Chopinetudeop.10no.1/OriginalData/data7.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/asset/video/Chopinetudeop.10no.1/OriginalData/data8.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/asset/video/Chopinetudeop.10no.1/OriginalData/data9.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/asset/video/Chopinetudeop.10no.1/OriginalData/ffmpeg_fun.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/asset/video/Chopinetudeop.10no.1/OriginalData/video.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/asset/video/Chopinetudeop.10no.1/phrase/data0.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/asset/video/Chopinetudeop.10no.1/phrase/data1.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/asset/video/Chopinetudeop.10no.1/phrase/data10.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/asset/video/Chopinetudeop.10no.1/phrase/data11.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/asset/video/Chopinetudeop.10no.1/phrase/data12.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/asset/video/Chopinetudeop.10no.1/phrase/data13.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/asset/video/Chopinetudeop.10no.1/phrase/data14.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/asset/video/Chopinetudeop.10no.1/phrase/data15.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/asset/video/Chopinetudeop.10no.1/phrase/data16.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/asset/video/Chopinetudeop.10no.1/phrase/data17.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/asset/video/Chopinetudeop.10no.1/phrase/data2.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/asset/video/Chopinetudeop.10no.1/phrase/data3.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/asset/video/Chopinetudeop.10no.1/phrase/data4.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/asset/video/Chopinetudeop.10no.1/phrase/data5.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/asset/video/Chopinetudeop.10no.1/phrase/data6.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/asset/video/Chopinetudeop.10no.1/phrase/data7.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/asset/video/Chopinetudeop.10no.1/phrase/data8.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/asset/video/Chopinetudeop.10no.1/phrase/data9.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/asset/video/Chopinetudeop.10no.1/phrase/phrase data.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/asset/video/Chopinetudeop.10no.4/OriginalData/.ipynb_checkpoints/ffmpeg_fun-checkpoint.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/asset/video/Chopinetudeop.10no.4/OriginalData/ffmpeg_fun.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/asset/video/Chopinetudeop.10no.4/OriginalData/video.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/asset/video/Chopinetudeop.10no.4/phrase/data0.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/asset/video/Chopinetudeop.10no.4/phrase/data1.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/asset/video/Chopinetudeop.10no.4/phrase/data10.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/asset/video/Chopinetudeop.10no.4/phrase/data11.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/asset/video/Chopinetudeop.10no.4/phrase/data12.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/asset/video/Chopinetudeop.10no.4/phrase/data13.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/asset/video/Chopinetudeop.10no.4/phrase/data14.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/asset/video/Chopinetudeop.10no.4/phrase/data15.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/asset/video/Chopinetudeop.10no.4/phrase/data16.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/asset/video/Chopinetudeop.10no.4/phrase/data17.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/asset/video/Chopinetudeop.10no.4/phrase/data18.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/asset/video/Chopinetudeop.10no.4/phrase/data19.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/asset/video/Chopinetudeop.10no.4/phrase/data2.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/asset/video/Chopinetudeop.10no.4/phrase/data20.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/asset/video/Chopinetudeop.10no.4/phrase/data21.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/asset/video/Chopinetudeop.10no.4/phrase/data22.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/asset/video/Chopinetudeop.10no.4/phrase/data23.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/asset/video/Chopinetudeop.10no.4/phrase/data24.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/asset/video/Chopinetudeop.10no.4/phrase/data25.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/asset/video/Chopinetudeop.10no.4/phrase/data26.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/asset/video/Chopinetudeop.10no.4/phrase/data27.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/asset/video/Chopinetudeop.10no.4/phrase/data28.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/asset/video/Chopinetudeop.10no.4/phrase/data3.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/asset/video/Chopinetudeop.10no.4/phrase/data4.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/asset/video/Chopinetudeop.10no.4/phrase/data5.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/asset/video/Chopinetudeop.10no.4/phrase/data6.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/asset/video/Chopinetudeop.10no.4/phrase/data7.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/asset/video/Chopinetudeop.10no.4/phrase/data8.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/asset/video/Chopinetudeop.10no.4/phrase/data9.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/asset/video/Chopinetudeop.10no.4/phrase/phrase data.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/asset/video/bee.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/ios/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/ios/Flutter/AppFrameworkInfo.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/ios/Flutter/Debug.xcconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/ios/Flutter/Release.xcconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/ios/Runner.xcodeproj/project.pbxproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/ios/Runner.xcodeproj/project.xcworkspace/contents.xcworkspacedata" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/ios/Runner.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/ios/Runner.xcodeproj/project.xcworkspace/xcshareddata/WorkspaceSettings.xcsettings" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/ios/Runner.xcodeproj/xcshareddata/xcschemes/Runner.xcscheme" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/ios/Runner.xcworkspace/contents.xcworkspacedata" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/ios/Runner.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/ios/Runner.xcworkspace/xcshareddata/WorkspaceSettings.xcsettings" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/ios/Runner/AppDelegate.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/ios/Runner/Assets.xcassets/AppIcon.appiconset/Contents.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@1x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@1x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@1x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-60x60@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-60x60@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-76x76@1x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-76x76@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-83.5x83.5@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/ios/Runner/Assets.xcassets/LaunchImage.imageset/Contents.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/ios/Runner/Assets.xcassets/LaunchImage.imageset/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/ios/Runner/Base.lproj/LaunchScreen.storyboard" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/ios/Runner/Base.lproj/Main.storyboard" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/ios/Runner/Info.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/ios/Runner/Runner-Bridging-Header.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/ios/RunnerTests/RunnerTests.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/lib/component.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/lib/main.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/lib/screen/admin_screen/enroll_song_screen.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/lib/screen/confirm_screen.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/lib/screen/data_annotation_connection_func.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/lib/screen/data_annotation_screen.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/lib/screen/home_page.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/lib/screen/review_data_screen.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/lib/server_info.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/lib/text_field_widget.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/linux/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/linux/CMakeLists.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/linux/flutter/CMakeLists.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/linux/flutter/generated_plugin_registrant.cc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/linux/flutter/generated_plugin_registrant.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/linux/flutter/generated_plugins.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/linux/main.cc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/linux/my_application.cc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/linux/my_application.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/macos/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/macos/Flutter/Flutter-Debug.xcconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/macos/Flutter/Flutter-Release.xcconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/macos/Flutter/GeneratedPluginRegistrant.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/macos/Runner.xcodeproj/project.pbxproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/macos/Runner.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/macos/Runner.xcodeproj/xcshareddata/xcschemes/Runner.xcscheme" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/macos/Runner.xcworkspace/contents.xcworkspacedata" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/macos/Runner.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/macos/Runner/AppDelegate.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/macos/Runner/Assets.xcassets/AppIcon.appiconset/Contents.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/macos/Runner/Assets.xcassets/AppIcon.appiconset/app_icon_1024.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/macos/Runner/Assets.xcassets/AppIcon.appiconset/app_icon_128.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/macos/Runner/Assets.xcassets/AppIcon.appiconset/app_icon_16.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/macos/Runner/Assets.xcassets/AppIcon.appiconset/app_icon_256.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/macos/Runner/Assets.xcassets/AppIcon.appiconset/app_icon_32.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/macos/Runner/Assets.xcassets/AppIcon.appiconset/app_icon_512.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/macos/Runner/Assets.xcassets/AppIcon.appiconset/app_icon_64.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/macos/Runner/Base.lproj/MainMenu.xib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/macos/Runner/Configs/AppInfo.xcconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/macos/Runner/Configs/Debug.xcconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/macos/Runner/Configs/Release.xcconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/macos/Runner/Configs/Warnings.xcconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/macos/Runner/DebugProfile.entitlements" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/macos/Runner/Info.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/macos/Runner/MainFlutterWindow.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/macos/Runner/Release.entitlements" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/macos/RunnerTests/RunnerTests.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/pubspec.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/pubspec.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/test/widget_test.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/web/favicon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/web/icons/Icon-192.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/web/icons/Icon-512.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/web/icons/Icon-maskable-192.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/web/icons/Icon-maskable-512.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/web/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/web/manifest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/windows/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/windows/CMakeLists.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/windows/flutter/CMakeLists.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/windows/flutter/generated_plugin_registrant.cc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/windows/flutter/generated_plugin_registrant.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/windows/flutter/generated_plugins.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/windows/runner/CMakeLists.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/windows/runner/Runner.rc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/windows/runner/flutter_window.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/windows/runner/flutter_window.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/windows/runner/main.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/windows/runner/resource.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/windows/runner/resources/app_icon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/windows/runner/runner.exe.manifest" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/windows/runner/utils.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/windows/runner/utils.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/windows/runner/win32_window.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy version/application/windows/runner/win32_window.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web_service(2)/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/web_service(2)/app.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,9 +321,30 @@
       <recent name="C:\Users\User\AndroidStudioProjects\data_annotation_page\asset\video" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.database_server (1)">
+  <component name="RunManager" selected="Python.app">
     <configuration name="main.dart" type="FlutterRunConfigurationType" factoryName="Flutter">
       <option name="filePath" value="$PROJECT_DIR$/lib/main.dart" />
+      <method v="2" />
+    </configuration>
+    <configuration name="app" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="data_annotation_page" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/web_service(2)" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/web_service(2)/app.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
     <configuration name="database_server (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
@@ -172,11 +454,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.app" />
         <item itemvalue="Python.database_server (1)" />
         <item itemvalue="Python.database_server" />
         <item itemvalue="Python.database_server" />
         <item itemvalue="Python.save_song" />
-        <item itemvalue="Python.main" />
       </list>
     </recent_temporary>
   </component>
