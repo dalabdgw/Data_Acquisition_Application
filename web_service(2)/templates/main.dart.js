@@ -47816,7 +47816,7 @@ var $async$vR=A.R(function(h,i){if(h===1)return A.N(i,r)
 while(true)switch(s){case 0:p=A.Jl(null)
 o=t.N
 s=3
-return A.V(p.AW(0,"http://127.0.0.1:50000/input_review_data",null,A.aK(["song_name",a,"part_num",b,"user_id",c,"music_score",d,"tech_score",e,"sound_score",f,"articulation_score",g],o,o),null,null,A.ax1("POST",null),null,t.z),$async$vR)
+return A.V(p.AW(0,"http://ec2-15-164-96-193.ap-northeast-2.compute.amazonaws.com:50000/input_review_data",null,A.aK(["song_name",a,"part_num",b,"user_id",c,"music_score",d,"tech_score",e,"sound_score",f,"articulation_score",g],o,o),null,null,A.ax1("POST",null),null,t.z),$async$vR)
 case 3:n=i
 p.aw(0)
 q=n.c
@@ -47920,7 +47920,7 @@ var $async$A8=A.R(function(a,b){if(a===1)return A.N(b,r)
 while(true)switch(s){case 0:A.fp("\ud638\ucd9c")
 p=A.Jl(null)
 s=3
-return A.V(p.WA(0,"http://127.0.0.1:50000/load_song_list",t.z),$async$A8)
+return A.V(p.WA(0,"http://ec2-15-164-96-193.ap-northeast-2.compute.amazonaws.com:50000/load_song_list",t.z),$async$A8)
 case 3:o=b.a
 p.aw(0)
 q=o
@@ -47934,7 +47934,7 @@ while(true)switch(s){case 0:A.fp("\ud638\ucd9c")
 p=A.Jl(null)
 o=t.z
 s=3
-return A.V(p.vG(0,"http://127.0.0.1:50000/load_song_part_list",A.aK(["song_name",a],t.N,o),o),$async$uS)
+return A.V(p.vG(0,"http://ec2-15-164-96-193.ap-northeast-2.compute.amazonaws.com:50000/load_song_part_list",A.aK(["song_name",a],t.N,o),o),$async$uS)
 case 3:n=c.a
 p.aw(0)
 q=n
@@ -48200,7 +48200,7 @@ var $async$A7=A.R(function(b,c){if(b===1)return A.N(c,r)
 while(true)switch(s){case 0:p=A.Jl(null)
 o=t.z
 s=3
-return A.V(p.vG(0,"http://127.0.0.1:50000/load_user_review",A.aK(["user_id",a],t.N,o),o),$async$A7)
+return A.V(p.vG(0,"http://ec2-15-164-96-193.ap-northeast-2.compute.amazonaws.com:50000/load_user_review",A.aK(["user_id",a],t.N,o),o),$async$A7)
 case 3:n=c.a
 p.aw(0)
 q=n
@@ -48214,7 +48214,7 @@ while(true)switch(s){case 0:p=A.Jl(null)
 o=t.z
 m=A
 s=3
-return A.V(p.vG(0,"http://127.0.0.1:50000/load_part_review",A.aK(["user_id",a,"song_name",b],t.N,o),o),$async$uT)
+return A.V(p.vG(0,"http://ec2-15-164-96-193.ap-northeast-2.compute.amazonaws.com:50000/load_part_review",A.aK(["user_id",a,"song_name",b],t.N,o),o),$async$uT)
 case 3:n=m.a8F(d.a,o,t.j)
 p.aw(0)
 q=n
