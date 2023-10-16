@@ -4,16 +4,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e0dc829a-92df-4fcd-97e8-263a8a82897c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/lib/screen/confirm_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/application/lib/screen/confirm_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/lib/screen/review_data_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/application/lib/screen/review_data_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/lib/server_info.dart" beforeDir="false" afterPath="$PROJECT_DIR$/application/lib/server_info.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/Readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/server/Readme.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/database/database_server.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/database/database_server.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/database/save_song.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/database/save_song.py" afterDir="false" />
-    </list>
+    <list default="true" id="e0dc829a-92df-4fcd-97e8-263a8a82897c" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
