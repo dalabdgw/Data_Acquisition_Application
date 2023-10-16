@@ -6,7 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="e0dc829a-92df-4fcd-97e8-263a8a82897c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/lib/screen/confirm_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/application/lib/screen/confirm_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/lib/screen/review_data_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/application/lib/screen/review_data_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/lib/server_info.dart" beforeDir="false" afterPath="$PROJECT_DIR$/application/lib/server_info.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/Readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/server/Readme.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/database/database_server.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/database/database_server.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/database/save_song.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/database/save_song.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,20 +41,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.cidr.known.project.marker": "true",
-    "cidr.known.project.marker": "true",
-    "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "master",
-    "io.flutter.reload.alreadyRun": "true",
-    "last_opened_file_path": "C:/Users/User/Desktop/박민서 연구 과제/data_annotation_page/server",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
-    "show.migrate.to.gradle.popup": "false"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;io.flutter.reload.alreadyRun&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/User/Desktop/박민서 연구 과제/data_annotation_page/server&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
+    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\User\Desktop\박민서 연구 과제\data_annotation_page\server" />
@@ -61,7 +67,7 @@
       <recent name="C:\Users\User\AndroidStudioProjects\data_annotation_page\asset\video" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.app">
+  <component name="RunManager" selected="Python.save_song (1)">
     <configuration name="main.dart" type="FlutterRunConfigurationType" factoryName="Flutter">
       <option name="filePath" value="$PROJECT_DIR$/lib/main.dart" />
       <method v="2" />
@@ -150,7 +156,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="save_song (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="data_annotation_page" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -158,11 +164,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/server_ec2" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/server/database" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/server_ec2/main.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/server/database/save_song.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -194,11 +200,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.app" />
+        <item itemvalue="Python.save_song (1)" />
         <item itemvalue="Python.database_server (1)" />
+        <item itemvalue="Python.app" />
         <item itemvalue="Python.database_server" />
         <item itemvalue="Python.database_server" />
-        <item itemvalue="Python.save_song" />
       </list>
     </recent_temporary>
   </component>

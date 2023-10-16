@@ -66,7 +66,6 @@ def create_app():
             cursor.close()
             connection.close()
 
-
     # table 만들기
     def makeSongListTable():
         try:
@@ -540,7 +539,7 @@ def create_app():
     def input_review_data():
 
         review_data = request.json
-
+        print(review_data)
         try:
             insertReviewTable(
                 song_name=review_data['song_name'],
@@ -551,6 +550,7 @@ def create_app():
                 sound_score=review_data['sound_score'],
                 articulation_score=review_data['articulation_score']
             )
+
         except Exception as e:
             print(e)
 
