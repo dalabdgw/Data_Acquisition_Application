@@ -1,3 +1,4 @@
+import 'package:data_annotation_page/screen/data_annotation_screen.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
@@ -34,11 +35,12 @@ class _ReviewDataScreenState extends State<ReviewDataScreen> {
 
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
           onPressed: (){
-            Navigator.pop(context);
+            Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (_)=>DataAnnotationScreen()), (route)=>false);
           },
           icon: Icon(Icons.arrow_back, color: Colors.black,),
         ),
@@ -50,7 +52,8 @@ class _ReviewDataScreenState extends State<ReviewDataScreen> {
         future: load_user_review,
         builder: (context, snapshot){
           if(snapshot.hasData){
-            song_name_list = [];
+
+            print(song_name_list);
               List<dynamic> tempList = snapshot.data;
               for(int i=0;i<tempList.length;i++){
                 song_name_list.add(tempList[i].toString());
@@ -69,7 +72,6 @@ class _ReviewDataScreenState extends State<ReviewDataScreen> {
                         setState(() {
                           load_part_review = loadReviewPartData('pms1001', current_song_name);
                         });
-
                         renderReviewDataAlert(
                           song_name_list[index]
                         );
@@ -112,14 +114,12 @@ class _ReviewDataScreenState extends State<ReviewDataScreen> {
   renderReviewDataAlert(
       String song_name,
       ){
-
-
     List<dynamic>? created_date = [];
     List<dynamic>? music_score = [];
     List<dynamic>? tech_score = [];
     List<dynamic>? sound_score = [];
     List<dynamic>? articulation_score = [];
-
+    List<dynamic>? part_seq = [];
 
     //chart design
 
@@ -133,7 +133,9 @@ class _ReviewDataScreenState extends State<ReviewDataScreen> {
       part_cursor = 0;
 
       return StatefulBuilder(
+
         builder: (BuildContext context, StateSetter setState){
+
           return AlertDialog(
 
               content: FutureBuilder(
@@ -141,14 +143,13 @@ class _ReviewDataScreenState extends State<ReviewDataScreen> {
                 builder: (context,snapshot){
                   if(snapshot.hasData){
                     Map<dynamic, List<dynamic>> map = snapshot.data;
-
                     // 데이터 분할
                     created_date = map['created_date_list'];
                     music_score = map['music_score_list'];
                     tech_score = map['tech_score_list'];
                     sound_score = map['sound_score_list'];
                     articulation_score = map['articulation_score_list'];
-
+                    part_seq = map['part_list'];
 
                     last_index = (music_score!.length - 1)!;
                     c1.y = double.parse(music_score![part_cursor].toString());
@@ -165,7 +166,7 @@ class _ReviewDataScreenState extends State<ReviewDataScreen> {
                           Container(
                               height: 50.0,
                               width: MediaQuery.of(context).size.width,
-                              child: Text('곡명: ${song_name} , 파트: ${part_cursor}', style: TextStyle(fontSize: 20.0),textAlign: TextAlign.center,)
+                              child: Text('곡명: ${song_name} , 파트: ${part_seq?[part_cursor]}, 평가 날짜: ${created_date?[part_cursor]}', style: TextStyle(fontSize: 20.0),textAlign: TextAlign.center,)
                           ),
                           Container(
                             height: 400.0,
@@ -235,6 +236,9 @@ class _ReviewDataScreenState extends State<ReviewDataScreen> {
                                   });
                                 }, child: Text('이전${part_cursor}'), style: ElevatedButton.styleFrom(backgroundColor: Colors.black),),
                                 ElevatedButton(onPressed: (){
+                                  Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (_)=>ReviewDataScreen()), (route)=>false);
+                                }, child: Text('닫기'),style: ElevatedButton.styleFrom(backgroundColor: Colors.black),),
+                                ElevatedButton(onPressed: (){
                                   setState(() {
                                     if(part_cursor == last_index){
                                       print('마지막');
@@ -261,7 +265,7 @@ class _ReviewDataScreenState extends State<ReviewDataScreen> {
           );
         },
       );
-    });
+    }, barrierDismissible: false);
   }
   // 평가 데이터를 조회하기
   Future<List> loadReviewData(user_id) async {

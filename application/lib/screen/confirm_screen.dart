@@ -1,3 +1,4 @@
+import 'package:data_annotation_page/screen/data_annotation_screen.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
@@ -85,6 +86,16 @@ class _ConfirmScreenState extends State<ConfirmScreen> {
     ];
 
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Color(0x0000000),
+        shadowColor:  Color(0x0000000),
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back, color: Colors.black,),
+          onPressed: (){
+            Navigator.pop(context);
+          },
+        ),
+      ),
       body: Container(
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
@@ -119,7 +130,7 @@ class _ConfirmScreenState extends State<ConfirmScreen> {
                         cornerStyle: CornerStyle.bothCurve,
                         enableTooltip: true,
                         dataLabelSettings: DataLabelSettings(
-
+                        isVisible: true
                         ),
                         radius: '100%',
                         useSeriesColor: true,
@@ -140,6 +151,7 @@ class _ConfirmScreenState extends State<ConfirmScreen> {
                         width: '85%'
                     )
                   ],
+
                 ),
               ),
               Container(
@@ -157,6 +169,7 @@ class _ConfirmScreenState extends State<ConfirmScreen> {
                         soundScore.toString(),
                         articulationScore.toString(),
                     );
+                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (_)=>DataAnnotationScreen()));
                   },
                   child: Text('저장'),
                 ),
@@ -169,9 +182,7 @@ class _ConfirmScreenState extends State<ConfirmScreen> {
   }
   // 평가 데이터를 저장하기
   Future<int?> saveReviewData(song_name, part_num, user_id, music_score, tech_score, sound_score, articulation_score) async {
-
     Dio dio = Dio();
-
     Map<String, String> json_data = {
       'song_name' : song_name,
       'part_num' : part_num,
@@ -182,7 +193,7 @@ class _ConfirmScreenState extends State<ConfirmScreen> {
       'articulation_score' : articulation_score
     };
 
-    Response response = await dio.post(AWSRDSIP+'/save_review_data', data: json_data);
+    Response response = await dio.post(AWSRDSIP+'/input_review_data', data: json_data);
 
     dio.close();
     return response.statusCode;
