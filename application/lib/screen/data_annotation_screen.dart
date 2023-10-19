@@ -839,7 +839,7 @@ class _DataAnnotationScreenState extends State<DataAnnotationScreen> {
                             'user_name' : user_name,
                             'ph_num' : ph_num
                           });
-                          if(res.statusCode==200){
+                          if(res.data != null){
                             _.setUid(user_name);
                             Navigator.pop(context);
                             showDialog(context: context, builder: (builder) {
@@ -857,6 +857,7 @@ class _DataAnnotationScreenState extends State<DataAnnotationScreen> {
                             setState((){});
                           }
                         }catch(e){
+                          print(e);
                           showDialog(context: context, builder: (builder) {
                             return AlertDialog(
                               content: Text('서버가 바빠요! 조금만 기다려주세요!'),
