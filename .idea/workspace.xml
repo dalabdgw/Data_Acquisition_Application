@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e0dc829a-92df-4fcd-97e8-263a8a82897c" name="Changes" comment="" />
+    <list default="true" id="e0dc829a-92df-4fcd-97e8-263a8a82897c" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -58,7 +61,7 @@
       <recent name="C:\Users\User\AndroidStudioProjects\data_annotation_page\asset\video" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.save_song (1)">
+  <component name="RunManager" selected="Python.database_server (1)">
     <configuration name="main.dart" type="FlutterRunConfigurationType" factoryName="Flutter">
       <option name="filePath" value="$PROJECT_DIR$/lib/main.dart" />
       <method v="2" />
@@ -191,8 +194,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.save_song (1)" />
         <item itemvalue="Python.database_server (1)" />
+        <item itemvalue="Python.save_song (1)" />
         <item itemvalue="Python.app" />
         <item itemvalue="Python.database_server" />
         <item itemvalue="Python.database_server" />
