@@ -2,6 +2,7 @@ import 'package:data_annotation_page/screen/confirm_screen.dart';
 import 'package:data_annotation_page/screen/review_data_screen.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:video_player/video_player.dart';
 import 'package:data_annotation_page/component.dart';
 import 'package:data_annotation_page/server_info.dart';
@@ -14,6 +15,9 @@ class DataAnnotationScreen extends StatefulWidget {
 }
 
 class _DataAnnotationScreenState extends State<DataAnnotationScreen> {
+
+  final GlobalKey<NavigatorState> key =
+  new GlobalKey<NavigatorState>();
 
   late Future myFuture;
   late Future song_list_future;
@@ -41,7 +45,9 @@ class _DataAnnotationScreenState extends State<DataAnnotationScreen> {
   @override
   Widget build(BuildContext context) {
 
+
     return Scaffold(
+
       floatingActionButton: FloatingActionButton(
         onPressed: (){
           renderDescription();
@@ -49,6 +55,7 @@ class _DataAnnotationScreenState extends State<DataAnnotationScreen> {
         backgroundColor: Colors.black,
         child: Text('설명서'),
       ),
+
       appBar: AppBar(
         leading: Container(
           padding: EdgeInsets.all(5.0),
@@ -220,7 +227,7 @@ class _DataAnnotationScreenState extends State<DataAnnotationScreen> {
             ],
           )
       ),
-
+      key: key,
     );
   }
   // 비디오 위젯 렌더링!
@@ -590,7 +597,249 @@ class _DataAnnotationScreenState extends State<DataAnnotationScreen> {
         setState(() {});
       });
     super.initState();
+    SchedulerBinding.instance.addPostFrameCallback((_) {
+      // your method where use the context
+      // Example navigate:
+      showDialog(context: context, barrierDismissible: false, builder: (BuildContext context){
+
+        bool _isGenderCheckGirl = false;
+        bool _isGenderCheckMan = true;
+
+        String? departmentDropdownvalue = "음악과";
+
+        String? jobDropdownValue = "학생";
+
+        bool _isClickPhoneNumber = false;
+
+        String user_name = '';
+        String ph_num = '';
+
+        TextEditingController _nameController = TextEditingController();
+        TextEditingController _phnumController = TextEditingController();
+
+        return StatefulBuilder(builder: (BuildContext context, StateSetter setState){
+          return AlertDialog(
+            title: Text('환영합니다!'),
+            content: Container(
+              height: 400.0,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Text('곡 평가를 위해 정보를 등록해주세요!'),
+                  Container(
+                    margin: EdgeInsets.only(top: 30.0),
+                    child: Column(
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Container(
+                              width: 200.0,
+                              child: TextField(
+                                controller: _nameController,
+                                onChanged: (text){
+                                  setState((){
+                                    user_name = text;
+                                  });
+                                },
+                                decoration: InputDecoration(
+                                  label: Text('이름')
+                                ),
+                              ),
+                            )
+                          ],
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Container(
+                              width: 200.0,
+                              child: TextField(
+                                controller: _phnumController,
+                                onTap: (){
+                                 if(_isClickPhoneNumber != true){
+                                   _isClickPhoneNumber = true;
+                                   showDialog(context: context, builder: (builder){
+                                     return AlertDialog(
+                                       content: Text('전화번호를 잘 기입하셔야 상품을 드려요!'),
+                                     );
+                                   });
+                                 }
+                                },
+                                decoration: InputDecoration(
+                                    label: Text('전화번호')
+                                ),
+                                onChanged: (text){
+                                  setState((){
+                                     ph_num = text;
+                                  });
+                                },
+                              ),
+                            )
+                          ],
+                        ),
+                        SizedBox(
+                          height: 20.0,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            Text('남'),
+                            Checkbox(value: _isGenderCheckMan, onChanged: (value){
+                              setState(() {
+                                if(_isGenderCheckMan){
+                                }else{
+                                  _isGenderCheckMan = true;
+                                  _isGenderCheckGirl = false;
+                                }
+                              });
+                            }),
+                            Text('여'),
+                            Checkbox(value: _isGenderCheckGirl, onChanged: (value){
+                              setState(() {
+                                if(_isGenderCheckGirl){
+                                }else{
+                                  _isGenderCheckMan = false;
+                                  _isGenderCheckGirl = true;
+                                }
+                              });
+                            })
+                          ],
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            Text('학과 선택'),
+                            DropdownButton(
+                              value:departmentDropdownvalue,
+                              icon: Icon(Icons.arrow_drop_down),
+                              iconSize: 24,
+                              elevation: 8,
+                              underline: Container(
+                                height: 2,
+                                color: Colors.cyan,
+                              ),
+                              onChanged: (newValue){
+                                departmentDropdownvalue = newValue;
+                                setState((){});
+                              },
+                              items: <String>[
+                                '음악과',
+                                '성악과'
+                              ].map<DropdownMenuItem<String>>((String value){
+                                return DropdownMenuItem<String>(
+                                  value: value,
+                                  child: Text(value),
+                                );
+                              }).toList(),
+                            ),
+                          ],
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            Text('학과 선택'),
+                            DropdownButton(
+                              value:jobDropdownValue,
+                              icon: Icon(Icons.arrow_drop_down),
+                              iconSize: 24,
+                              elevation: 8,
+                              underline: Container(
+                                height: 2,
+                                color: Colors.cyan,
+                              ),
+                              onChanged: (newValue2){
+                                jobDropdownValue = newValue2;
+                                setState((){});
+                              },
+                              items: <String>[
+                                '학생',
+                                '대학생',
+                                '교수'
+                              ].map<DropdownMenuItem<String>>((String value){
+                                return DropdownMenuItem<String>(
+                                  value: value,
+                                  child: Text(value),
+                                );
+                              }).toList(),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  )
+                ],
+              ),
+            ),
+            actions: [
+              ElevatedButton(onPressed: () async{
+
+                Dio dio = Dio();
+
+                String gender = '';
+
+                if(user_name == ''){
+                  showDialog(context: context, builder: (BuildContext context){
+                    return AlertDialog(
+                      content: Text('이름을 입력해주세요!'),
+                    );
+                  });
+                }else {
+                  if (ph_num == '') {
+                    showDialog(
+                        context: context, builder: (BuildContext context) {
+                      return AlertDialog(
+                        content: Text('전화번호를 입력해주세요!'),
+                      );
+                    });
+                  } else {
+                    if (_isGenderCheckGirl == true) {
+                      gender = '여';
+                    } else {
+                      gender = '남';
+                    }
+                    var jsonData = {
+                      'user_name': user_name,
+                      'ph_num': ph_num,
+                      'gender': gender,
+                      'department': departmentDropdownvalue,
+                      'job': jobDropdownValue
+                    };
+                    print(jsonData);
+
+                    try {
+                      Response res = await dio.post('', data: jsonData);
+
+                      if (res.statusCode == 200) {
+                        dio.close();
+                        Navigator.pop(context);
+                      } else {
+                        showDialog(context: context, builder: (builder) {
+                          return AlertDialog(
+                            content: Text('서버가 바빠요! 조금만 기다려주세요!'),
+                          );
+                        });
+                      }
+                    }
+                    catch (e) {
+                      showDialog(context: context, builder: (builder) {
+                        return AlertDialog(
+                          content: Text('서버가 바빠요! 조금만 기다려주세요!'),
+                        );
+                      });
+                    }
+                  }
+                }
+              }, child: Text('등록하기!'))
+            ],
+          );
+        });
+      });
+    });
   }
+
+
+
 
 
   // 서버 곡 리스트를 불러온다.
@@ -628,7 +877,6 @@ class _DataAnnotationScreenState extends State<DataAnnotationScreen> {
     dio.close();
     return map;
   }
-
   // 평가 데이터 수정하기
   Future<int?> modifyReviewData() async {
 
