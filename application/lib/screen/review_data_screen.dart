@@ -1,6 +1,7 @@
 import 'package:data_annotation_page/screen/data_annotation_screen.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart' as gX;
 import 'package:syncfusion_flutter_charts/charts.dart';
 import 'package:data_annotation_page/server_info.dart';
 import 'confirm_screen.dart';
@@ -32,6 +33,9 @@ class _ReviewDataScreenState extends State<ReviewDataScreen> {
   ChartData c2 = ChartData('기술', 0);
   ChartData c3 = ChartData('소리', 0);
   ChartData c4 = ChartData('아티큘레이션', 0);
+  final uidController = gX.Get.put(UidController());
+
+  late String user_id;
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +44,7 @@ class _ReviewDataScreenState extends State<ReviewDataScreen> {
       appBar: AppBar(
         leading: IconButton(
           onPressed: (){
-            Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (_)=>DataAnnotationScreen()), (route)=>false);
+            Navigator.pop(context);
           },
           icon: Icon(Icons.arrow_back, color: Colors.black,),
         ),
@@ -52,7 +56,7 @@ class _ReviewDataScreenState extends State<ReviewDataScreen> {
         future: load_user_review,
         builder: (context, snapshot){
           if(snapshot.hasData){
-
+            song_name_list = [];
             print(song_name_list);
               List<dynamic> tempList = snapshot.data;
               for(int i=0;i<tempList.length;i++){
@@ -106,8 +110,9 @@ class _ReviewDataScreenState extends State<ReviewDataScreen> {
 
   @override
   void initState(){
-    load_user_review = loadReviewData('pms1001');
-    load_part_review = loadReviewPartData('pms1001', current_song_name);
+    user_id = uidController.getUid();
+    load_user_review = loadReviewData(user_id);
+    load_part_review = loadReviewPartData(user_id, current_song_name);
     super.initState();
   }
 
@@ -236,7 +241,7 @@ class _ReviewDataScreenState extends State<ReviewDataScreen> {
                                   });
                                 }, child: Text('이전${part_cursor}'), style: ElevatedButton.styleFrom(backgroundColor: Colors.black),),
                                 ElevatedButton(onPressed: (){
-                                  Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (_)=>ReviewDataScreen()), (route)=>false);
+                                  Navigator.pop(context);
                                 }, child: Text('닫기'),style: ElevatedButton.styleFrom(backgroundColor: Colors.black),),
                                 ElevatedButton(onPressed: (){
                                   setState(() {
@@ -265,7 +270,7 @@ class _ReviewDataScreenState extends State<ReviewDataScreen> {
           );
         },
       );
-    }, barrierDismissible: false);
+    });
   }
   // 평가 데이터를 조회하기
   Future<List> loadReviewData(user_id) async {

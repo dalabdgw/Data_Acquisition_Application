@@ -46,7 +46,7 @@
 | Field      | Type        | Null | Key         | Extra | Field Description |
 |------------|-------------|------|-------------|-------|-------------------|
 | Id         | INT         | no   | PRIMARY_KEY |       |                   |
-| user_name  | varchar(30) | no   |             |       | 이름                |
+| user_id    | varchar(30) | no   |             |       | 이름                |
 | ph_num     | varchar(30) |      |             |       | 전화번호              |
 | gender     | varchar(2)  |      |             |       | 성별                |
 | department | varchar(30) | no   |             |       | 학과                |

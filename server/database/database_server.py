@@ -161,7 +161,45 @@ def create_app():
         finally:
             cursor.close()
             connection.close()
+    def makeUserTable():
+        try:
+            # MySQL 데이터베이스에 연결
+            connection = connect_to_db()
 
+            # 커서 생성
+            cursor = connection.cursor()
+
+            # 테이블 생성 쿼리 작성
+            create_table_query = """
+            CREATE TABLE IF NOT EXISTS user_table(
+                id INT AUTO_INCREMENT PRIMARY KEY,
+                user_id VARCHAR(255) NOT NULL,
+                ph_num VARCHAR(30) NOT NULL unique key,
+                gender VARCHAR(2) NOT NULL,
+                department VARCHAR(30) NOT NULL,
+                job VARCHAR(30) NOT NULL
+            );
+            """
+
+            # 테이블 생성 쿼리 실행
+            cursor.execute(create_table_query)
+
+            insertUnknownUser = """
+                INSERT INTO user_table(user_id, ph_num, gender, department, job) values('Unknown', '111', '남', '성악과', '교수');
+            """
+
+            cursor.execute(insertUnknownUser)
+            connection.commit()
+
+            print("테이블 'user_table'가 성공적으로 생성되었습니다.")
+
+            return '200'
+
+        except pymysql.MySQLError as e:
+            print("MySQL 에러 발생:", e)
+        finally:
+            cursor.close()
+            connection.close()
     # insert func
     # song_name 해당하는  song_name을 입력!
     def insertSongTable(song_name):
@@ -519,11 +557,72 @@ def create_app():
             cursor.close()
             connection.close()
 
+    ## user define
+    def inputUser(user_data):
+
+        try:
+            # MySQL 데이터베이스에 연결
+            connection = connect_to_db()
+
+            # 커서 생성
+            cursor = connection.cursor()
+
+            # 테이블 생성 쿼리 작성
+            insert_query = """
+            INSERT INTO user_table(
+               user_id, ph_num, gender, department, job
+            ) VALUES (
+               %s, %s, %s, %s, %s
+            );
+            """
+            # 테이블 생성 쿼리 실행
+            cursor.execute(insert_query, user_data)
+            connection.commit()
+
+            print("테이블 'user_table'에 성공적으로 입력되었습니다.")
+
+            return '200'
+
+        except pymysql.MySQLError as e:
+            print("MySQL 에러 발생:", e)
+        finally:
+            cursor.close()
+            connection.close()
+
+    def selectUser(query_data):
+
+        try:
+            # MySQL 데이터베이스에 연결
+            connection = connect_to_db()
+
+            # 커서 생성
+            cursor = connection.cursor()
+
+            insert_q = """
+                        SELECT * FROM user_table WHERE user_id = %s and ph_num = %s
+                    """
+            cursor.execute(insert_q, query_data)
+
+            user_data = cursor.fetchone()
+
+
+            print(user_data, "테이블 'user_table에서 성공적으로 조회되었습니다.")
+
+            return user_data
+
+        except pymysql.MySQLError as e:
+            print("MySQL 에러 발생:", e)
+        finally:
+            cursor.close()
+            connection.close()
+
+
     # db 연결
     makeAnnotationDatabase()
     makeSongListTable()
     makeSongPartListTable()
     makeReviewTable()
+    makeUserTable()
 
     @app.route('/ping', methods=['GET'])
     def ping():
@@ -577,6 +676,26 @@ def create_app():
         part_review_list = loadReviewPart(user_id, song_name)
 
         return jsonify(part_review_list)
+
+    @app.route('/create_user', methods=['POST'])
+    def input_user_table():
+        user_data = request.json
+
+        user_list_data = [user_data['user_id'],user_data['ph_num'], user_data['gender'], user_data['department'], user_data['job']]
+        inputUser(user_list_data)
+
+        return '200'
+
+    @app.route('/load_user', methods=['GET'])
+    def select_user_table():
+        user_id =request.args.get('user_id')
+        ph_num = request.args.get('ph_num')
+
+        query_data = [user_id, ph_num]
+        user_data = selectUser(query_data)
+
+        return jsonify(user_data)
+
 
     return app
 

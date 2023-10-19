@@ -2,7 +2,7 @@ import 'package:data_annotation_page/screen/data_annotation_screen.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
-
+import 'package:get/get.dart' as gX;
 import 'package:data_annotation_page/server_info.dart';
 
 class ConfirmScreen extends StatefulWidget {
@@ -71,9 +71,7 @@ class _ConfirmScreenState extends State<ConfirmScreen> {
     this.soundScore = soundScore;
     this.articulationScore = articulationScore;
   }
-
-
-
+  final uidController = gX.Get.put(UidController());
   @override
   Widget build(BuildContext context) {
 
@@ -169,7 +167,7 @@ class _ConfirmScreenState extends State<ConfirmScreen> {
                         soundScore.toString(),
                         articulationScore.toString(),
                     );
-                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (_)=>DataAnnotationScreen()));
+                    Navigator.pop(context);
                   },
                   child: Text('저장'),
                 ),
@@ -192,11 +190,17 @@ class _ConfirmScreenState extends State<ConfirmScreen> {
       'sound_score' : sound_score,
       'articulation_score' : articulation_score
     };
-
+    print(user_id);
     Response response = await dio.post(AWSRDSIP+'/input_review_data', data: json_data);
 
     dio.close();
     return response.statusCode;
+  }
+
+  @override
+  void initState(){
+    user_id = uidController.getUid();
+    super.initState();
   }
 }
 class ChartData {
