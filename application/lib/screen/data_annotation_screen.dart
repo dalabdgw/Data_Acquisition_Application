@@ -35,7 +35,7 @@ class _DataAnnotationScreenState extends State<DataAnnotationScreen> {
   final formKey = GlobalKey<FormState>();
 
   // 데이터 베이스에 저장할 내용 입력하기  -> 폼 데이터
-  String current_user_id = 'pms1001'; // 이름
+  String current_user_id =''; // 이름
   String current_song_name = 'Chopinetudedae'; // 현재 곡 이름
 
   String musicScore = '';
@@ -51,7 +51,7 @@ class _DataAnnotationScreenState extends State<DataAnnotationScreen> {
 
       floatingActionButton: FloatingActionButton(
         onPressed: (){
-          renderDescription();
+          print(current_user_id);
         },
         backgroundColor: Colors.black,
         child: Text('설명서'),
@@ -155,7 +155,7 @@ class _DataAnnotationScreenState extends State<DataAnnotationScreen> {
                 flex: 10,
                 child: Container(
                   child: DrawerHeader(
-                    child: Text('~~~님'),
+                    child: Text('${current_user_id}님'),
                   ),
                 ),
               ),
@@ -164,6 +164,7 @@ class _DataAnnotationScreenState extends State<DataAnnotationScreen> {
                   child: InkWell(
                       onTap: (){
                         Navigator.push(context, MaterialPageRoute(builder: (_)=>ReviewDataScreen()));
+
                       },
                       child: Container(
                           width: MediaQuery.of(context).size.width,
@@ -401,6 +402,7 @@ class _DataAnnotationScreenState extends State<DataAnnotationScreen> {
                           label: '소리',
                           onSaved: (val) {
                             setState(() {
+
                               soundScore = val;
                             });
                           },
@@ -465,7 +467,9 @@ class _DataAnnotationScreenState extends State<DataAnnotationScreen> {
           validator: validator,
           decoration: InputDecoration(
             hintText: '0~100 사이 점수를 입력해주세요',
+
           ),
+
         ),
         SizedBox(height: 5.0,),
       ],
@@ -479,6 +483,7 @@ class _DataAnnotationScreenState extends State<DataAnnotationScreen> {
         if(formKey.currentState!.validate()){
           // validation 이 성공하면 true 가 리턴돼요!
           this.formKey.currentState?.save();
+          this.formKey.currentState?.reset();
 
           int musicS = int.parse(musicScore);
           int techS = int.parse(techScore);
@@ -493,7 +498,7 @@ class _DataAnnotationScreenState extends State<DataAnnotationScreen> {
             Navigator.push(context, MaterialPageRoute(builder: (_)=>ConfirmScreen(
               song_name: current_song_name,
               part_num: videoCursor,
-              user_id: 'pms1001',
+              user_id: current_user_id,
               musicScore: musicS,
               techScore: techS,
               soundScore: soundS,
@@ -586,18 +591,20 @@ class _DataAnnotationScreenState extends State<DataAnnotationScreen> {
   }
   @override
   void initState() {
-
+    super.initState();
     song_list_future = loadSongList();
 
     current_song_name = 'Chopinetudedae';
     myFuture = loadPartVideoList(current_song_name);
+
+    final uidController = gX.Get.put(UidController());
 
     _videoController = VideoPlayerController.asset('asset/video/bee.mp4')
       ..initialize().then((_) {
         // Ensure the first frame is shown after the video is initialized, even before the play button has been pressed.
         setState(() {});
       });
-    super.initState();
+
     SchedulerBinding.instance.addPostFrameCallback((_) {
       // your method where use the context
       // Example navigate:
@@ -803,6 +810,7 @@ class _DataAnnotationScreenState extends State<DataAnnotationScreen> {
 
                   user_name = 'Unknown';
                   _.setUid(user_name);
+                  current_user_id = user_name;
                   Navigator.pop(context);
 
 
@@ -836,11 +844,13 @@ class _DataAnnotationScreenState extends State<DataAnnotationScreen> {
                       if(_isLoginPaged){
                         try{
                           Response res = await dio.get(AWSRDSIP+'/load_user', queryParameters: {
-                            'user_name' : user_name,
+                            'user_id' : user_name,
                             'ph_num' : ph_num
                           });
+                          print(res.data);
                           if(res.data != null){
                             _.setUid(user_name);
+                            current_user_id = user_name;
                             Navigator.pop(context);
                             showDialog(context: context, builder: (builder) {
                               return AlertDialog(
@@ -884,6 +894,7 @@ class _DataAnnotationScreenState extends State<DataAnnotationScreen> {
 
                           if (res.statusCode == 200) {
                             _.setUid(user_name);
+                            current_user_id = user_name;
                             dio.close();
                             Navigator.pop(context);
                           } else {

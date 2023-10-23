@@ -24,6 +24,7 @@ class _ReviewDataScreenState extends State<ReviewDataScreen> {
   String current_song_name = 'Chopinetudedae';
 
 
+
   int index = 0;
   int part_cursor = 0;
   int? last_index=0;
@@ -33,6 +34,8 @@ class _ReviewDataScreenState extends State<ReviewDataScreen> {
   ChartData c2 = ChartData('기술', 0);
   ChartData c3 = ChartData('소리', 0);
   ChartData c4 = ChartData('아티큘레이션', 0);
+
+
   final uidController = gX.Get.put(UidController());
 
   late String user_id;
@@ -41,6 +44,13 @@ class _ReviewDataScreenState extends State<ReviewDataScreen> {
   Widget build(BuildContext context) {
 
     return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        onPressed: (){
+          print(uidController.getUid());
+
+        },
+        child: Text(''),
+      ),
       appBar: AppBar(
         leading: IconButton(
           onPressed: (){
@@ -74,7 +84,7 @@ class _ReviewDataScreenState extends State<ReviewDataScreen> {
                       onTap: (){
                         current_song_name = song_name_list[index];
                         setState(() {
-                          load_part_review = loadReviewPartData('pms1001', current_song_name);
+                          load_part_review = loadReviewPartData(user_id, current_song_name);
                         });
                         renderReviewDataAlert(
                           song_name_list[index]
@@ -111,6 +121,7 @@ class _ReviewDataScreenState extends State<ReviewDataScreen> {
   @override
   void initState(){
     user_id = uidController.getUid();
+    print(user_id);
     load_user_review = loadReviewData(user_id);
     load_part_review = loadReviewPartData(user_id, current_song_name);
     super.initState();

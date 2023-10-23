@@ -597,7 +597,7 @@ def create_app():
 
             # 커서 생성
             cursor = connection.cursor()
-
+            print(query_data)
             insert_q = """
                         SELECT * FROM user_table WHERE user_id = %s and ph_num = %s
                     """
