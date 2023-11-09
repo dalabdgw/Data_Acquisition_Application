@@ -284,6 +284,7 @@ class _ReviewDataScreenState extends State<ReviewDataScreen> {
     });
   }
   // 평가 데이터를 조회하기
+
   Future<List> loadReviewData(user_id) async {
 
     Dio dio = Dio();
@@ -293,6 +294,7 @@ class _ReviewDataScreenState extends State<ReviewDataScreen> {
     dio.close();
     return responseBody;
   }
+
   Future<Map<dynamic, List>> loadReviewPartData(user_id, song_name) async {
 
     Dio dio = Dio();

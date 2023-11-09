@@ -71,6 +71,7 @@ class _ConfirmScreenState extends State<ConfirmScreen> {
     this.soundScore = soundScore;
     this.articulationScore = articulationScore;
   }
+
   final uidController = gX.Get.put(UidController());
   @override
   Widget build(BuildContext context) {
@@ -203,6 +204,7 @@ class _ConfirmScreenState extends State<ConfirmScreen> {
     super.initState();
   }
 }
+
 class ChartData {
   ChartData(this.x, this.y);
   String x;

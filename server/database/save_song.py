@@ -124,6 +124,7 @@ def upload_file(file_path, file_name, song_name):
         return None
     video_url = f'https://{bucket}.s3.{location}.amazonaws.com/{song_name}/{object_name}'
     return video_url
+
 # 파일경로 부분 수정 필요, 추가적으로 데이터 이름도 수정 필요
 def upload_file_DirToS3(song_name, data_path):
 
@@ -146,6 +147,7 @@ def upload_file_DirToS3(song_name, data_path):
     }
 
     return db_data
+
 def insertS3Song(song_name, bucket_name):
 
     folder_name = song_name + '/'
@@ -164,6 +166,7 @@ def saveToSongPartDb(song_name, data_path, connection):
     except Exception as e:
         print(e)
         print('DB 오류 발생! saveToSongPartDb 함수 참조!')
+
 
 
 if __name__ == "__main__":

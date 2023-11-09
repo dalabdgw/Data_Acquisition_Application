@@ -20,17 +20,24 @@ class _DataAnnotationScreenState extends State<DataAnnotationScreen> {
   final GlobalKey<NavigatorState> key =
   new GlobalKey<NavigatorState>();
 
-  late Future myFuture;
-  late Future song_list_future;
 
-  late VideoPlayerController _videoController; // for video player
 
-  List<dynamic> video_part = [];
+
+  late Future song_list_future; // 음악 이름 데이터 로더
+  late Future playVideoListFuture; // 연주 동영상 데이터 로더
+  late Future myFuture; // 음악 동영상 데이터 로더
+
+  late VideoPlayerController _videoController; // 악보 동영상 컨트롤러
+  late VideoPlayerController _videoPlayController; // 연주자 동영상 컨트롤러
+  
+  List<dynamic> video_part = []; // 악보 동영상 url 리스트
+  List<dynamic> videoPlayPart = []; // 연주자 동영상 url 리스트
 
   // 곡 모음 리스트
-  List<dynamic> song_name_list = [];
+  List<dynamic> song_name_list = []; // 곡 이름 리스트
 
-  int videoCursor = 0;
+  int videoCursor = 0; //  악보 동영상 순서
+  int videoPlayCursor = 0; // 연주자 동영상 순서
   // annotation table!
   final formKey = GlobalKey<FormState>();
 
@@ -38,6 +45,8 @@ class _DataAnnotationScreenState extends State<DataAnnotationScreen> {
   String current_user_id =''; // 이름
   String current_song_name = 'Chopinetudedae'; // 현재 곡 이름
 
+
+  // 평가 점수 표
   String musicScore = '';
   String techScore = '';
   String soundScore = '';
@@ -48,14 +57,6 @@ class _DataAnnotationScreenState extends State<DataAnnotationScreen> {
 
 
     return Scaffold(
-
-      floatingActionButton: FloatingActionButton(
-        onPressed: (){
-          print(current_user_id);
-        },
-        backgroundColor: Colors.black,
-        child: Text('설명서'),
-      ),
 
       appBar: AppBar(
         leading: Container(
@@ -81,52 +82,91 @@ class _DataAnnotationScreenState extends State<DataAnnotationScreen> {
           ),
         ],
       ),
+
       body: SafeArea(
+
         child: FutureBuilder(
-          future: song_list_future,
+
+          future: song_list_future, // 노래 이름 로더
+
           builder: (context, snapshot1){
 
             if(snapshot1.data != null){
 
-              song_name_list = snapshot1.data;
+              song_name_list = snapshot1.data; // 데이터 할당
 
-              return FutureBuilder(
-                future: myFuture,
-                builder: (context, snapshot){
-                  if(snapshot.data != null){
+              return Container(
 
-                    video_part = snapshot.data;
+                  width: MediaQuery.of(context).size.width,
+                  height: MediaQuery.of(context).size.height,
+                  child: SingleChildScrollView(
 
-                    return Container(
-                        width: MediaQuery.of(context).size.width,
-                        height: MediaQuery.of(context).size.height,
-                        child: SingleChildScrollView(
-                          scrollDirection: Axis.vertical,
-                          child: MediaQuery.of(context).size.width > 700.0 ?
-                          Row(
-                            children: [
-                              Expanded(
-                                flex: 6,
-                                child: renderVideoPlayer(),
+                    scrollDirection: Axis.vertical,
+                    child: MediaQuery.of(context).size.width > 700.0 ?
+                    Row(
+                      children: [
+                        Expanded(
+                            flex: 6,
+                            child: Container(
+                              width: MediaQuery.of(context).size.width,
+                              height: MediaQuery.of(context).size.height,
+                              child: Column(
+                                children: [
+                                  Expanded(
+                                    flex: 1,
+                                    child: Container(
+                                      child: FutureBuilder(
+                                        future: myFuture,
+                                        builder: (context, snapshot){
+
+                                          if (snapshot.hasData){
+
+                                            video_part = snapshot.data; // 악보 동영상 url 할당
+
+                                            return renderVideoPlayer();
+                                          }else{
+                                            return CircularProgressIndicator();
+                                          }
+                                        },
+                                      ),
+                                    ),
+                                  ),
+                                  Expanded(
+                                    flex: 1,
+                                    child: Container(
+                                        child: FutureBuilder(
+                                          future: playVideoListFuture,
+                                          builder: (context, snapshot2){
+                                            if (snapshot2.hasData){
+
+                                              videoPlayPart = snapshot2.data; //연주 동영상 url 할당
+
+                                              return renderVideoPlayer2();
+                                            }else{
+                                              return CircularProgressIndicator();
+                                            }
+                                          },
+                                        )
+                                    ),
+                                  ),
+                                ],
                               ),
-                              Expanded(
-                                flex: 4,
-                                child: renderAnnotationPaper(),
-                              )
-                            ],
-                          ):
-                          Column(
-                            children: [
-                              renderVideoPlayer(),
-                              renderAnnotationPaper(),
-                            ],
-                          ),
+                            )
+                        ),
+                        Expanded(
+                          flex: 4,
+                          child: renderAnnotationPaper(),
                         )
-                    );
-                  }else{
-                    return CircularProgressIndicator();
-                  }
-                },
+                      ],
+                    ):
+                    Column(
+                      children: [
+                        renderVideoPlayer(),
+                        renderVideoPlayer2(),
+                        renderAnnotationPaper(),
+                      ],
+                    ),
+                  )
               );
             }else{
               return Container(
@@ -146,6 +186,7 @@ class _DataAnnotationScreenState extends State<DataAnnotationScreen> {
           },
         )
       ),
+
       endDrawer: Drawer(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
@@ -230,9 +271,11 @@ class _DataAnnotationScreenState extends State<DataAnnotationScreen> {
           )
       ),
       key: key,
+
     );
   }
-  // 비디오 위젯 렌더링!
+
+  // 비디오 위젯 렌더링! (악보 동영상)
   renderVideoPlayer(){
     return Stack(
       children: [
@@ -341,6 +384,232 @@ class _DataAnnotationScreenState extends State<DataAnnotationScreen> {
       ],
     );
   }
+  //연주 동영상
+  renderVideoPlayer2(){
+    return Stack(
+      children: [
+        Container(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(10.0),
+            color: Colors.black,
+          ),
+          margin: EdgeInsets.all(20.0),
+          height: MediaQuery.of(context).size.width > 700.0 ? MediaQuery.of(context).size.height -100 : 250.0,
+          width: MediaQuery.of(context).size.width,
+          child: _videoPlayController.value.isInitialized ? VideoPlayer(_videoPlayController,) : Center(child: CircularProgressIndicator(),),
+        ),
+        Positioned(
+          bottom: 30,
+          left: 30,
+          child: ElevatedButton(
+            style: ElevatedButton.styleFrom(
+                onPrimary: Colors.black,
+                backgroundColor: Colors.white
+            ),
+            onPressed: (){
+              videoPlayCursor -= 1;
+              if(videoPlayCursor < 0){
+                //alert 처음 동영상 입니다.
+                videoPlayCursor += 1;
+                print('처음');
+                return;
+              }else if(videoPlayCursor > videoPlayPart.length){
+                //alert 마지막 동영상 입니다.
+                return;
+              }else{
+                _videoPlayController = VideoPlayerController.networkUrl(Uri.parse(videoPlayPart[videoPlayCursor]['part_url']))
+                  ..initialize().then((_) {
+                    // Ensure the first frame is shown after the video is initialized, even before the play button has been pressed.
+                    setState(() {});
+                  });
+              }
+            },
+            child: Text('뒤로', style: TextStyle(color: Colors.black),),
+          ),
+        ),
+        Positioned(
+          bottom: 30,
+          right: 30,
+          child: ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Colors.white,
+              onPrimary: Colors.black,
+            ),
+            onPressed: (){
+              videoPlayCursor += 1;
+              if(videoPlayCursor < 0){
+                //alert 처음 동영상 입니다.
+                return;
+              }else if(videoPlayCursor > videoPlayPart.length-1){
+                //alert 마지막 동영상 입니다.
+                videoPlayCursor-=1;
+                print('마지막');
+                return;
+              }else{
+                _videoPlayController = VideoPlayerController.networkUrl(Uri.parse(videoPlayPart[videoPlayCursor]['part_url']))
+                  ..initialize().then((_) {
+                    // Ensure the first frame is shown after the video is initialized, even before the play button has been pressed.
+                    setState(() {});
+                  });
+              }
+            },
+            child: Text('다음', style: TextStyle(color: Colors.black),),
+          ),
+        ),
+        Positioned(
+          bottom: 30,
+          left: 100,
+          right: 100,
+          child: ElevatedButton(
+            style: ElevatedButton.styleFrom(
+                onPrimary: Colors.black,
+                backgroundColor: Colors.white
+            ),
+            onPressed: (){
+              if(videoPlayCursor==0){
+                _videoPlayController = VideoPlayerController.networkUrl(Uri.parse(videoPlayPart[videoPlayCursor]['part_url']))
+                  ..initialize().then((_) {
+                    // Ensure the first frame is shown after the video is initialized, even before the play button has been pressed.
+                    setState(() {});
+                  });
+              }
+              _videoPlayController.value.isPlaying
+                  ? _videoPlayController.pause()
+                  : _videoPlayController.play();
+              setState(() {
+
+              });
+            },
+            child: _videoPlayController.value.isPlaying ? Text('정지', style: TextStyle(color: Colors.black),) : Text('재생', style: TextStyle(color: Colors.black),),
+          ),
+
+        ),
+        Positioned(
+          left: 100,
+          right: 100,
+          top: 20,
+          child: Text('part${videoPlayCursor}', textAlign: TextAlign.center, style: TextStyle(fontSize: 20.0, color: Colors.white),),
+        )
+      ],
+    );
+  }
+
+
+  // 비디오 동영상 랜더 함수
+  // 인풋 컨트롤러, 비디오 URL, 비디오 커서
+  renderVideoPlayer3(
+      VideoPlayerController videoPlayController,
+      List<dynamic> videoPart,
+      int videoCursor
+      ){
+    return Stack(
+      children: [
+        Container(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(10.0),
+            color: Colors.black,
+          ),
+          margin: EdgeInsets.all(20.0),
+          height: MediaQuery.of(context).size.width > 700.0 ? MediaQuery.of(context).size.height -100 : 250.0,
+          width: MediaQuery.of(context).size.width,
+          child: videoPlayController.value.isInitialized ? VideoPlayer(videoPlayController,) : Center(child: CircularProgressIndicator(),),
+        ),
+        Positioned(
+          bottom: 30,
+          left: 30,
+          child: ElevatedButton(
+            style: ElevatedButton.styleFrom(
+                onPrimary: Colors.black,
+                backgroundColor: Colors.white
+            ),
+            onPressed: (){
+              videoCursor -= 1;
+              if(videoCursor < 0){
+                //alert 처음 동영상 입니다.
+                videoCursor += 1;
+                print('처음');
+                return;
+              }else if(videoCursor > videoPart.length){
+                //alert 마지막 동영상 입니다.
+                return;
+              }else{
+                videoPlayController = VideoPlayerController.networkUrl(Uri.parse(videoPart[videoCursor]['part_url']))
+                  ..initialize().then((_) {
+                    // Ensure the first frame is shown after the video is initialized, even before the play button has been pressed.
+                    setState(() {});
+                  });
+              }
+            },
+            child: Text('뒤로', style: TextStyle(color: Colors.black),),
+          ),
+        ),
+        Positioned(
+          bottom: 30,
+          right: 30,
+          child: ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Colors.white,
+              onPrimary: Colors.black,
+            ),
+            onPressed: (){
+              videoCursor += 1;
+              if(videoCursor < 0){
+                //alert 처음 동영상 입니다.
+                return;
+              }else if(videoCursor > videoPart.length-1){
+                //alert 마지막 동영상 입니다.
+                videoCursor-=1;
+                print('마지막');
+                return;
+              }else{
+                videoPlayController = VideoPlayerController.networkUrl(Uri.parse(videoPart[videoCursor]['part_url']))
+                  ..initialize().then((_) {
+                    // Ensure the first frame is shown after the video is initialized, even before the play button has been pressed.
+                    setState(() {});
+                  });
+              }
+            },
+            child: Text('다음', style: TextStyle(color: Colors.black),),
+          ),
+        ),
+        Positioned(
+          bottom: 30,
+          left: 100,
+          right: 100,
+          child: ElevatedButton(
+            style: ElevatedButton.styleFrom(
+                onPrimary: Colors.black,
+                backgroundColor: Colors.white
+            ),
+            onPressed: (){
+              if(videoCursor==0){
+                videoPlayController = VideoPlayerController.networkUrl(Uri.parse(videoPart[videoCursor]['part_url']))
+                  ..initialize().then((_) {
+                    // Ensure the first frame is shown after the video is initialized, even before the play button has been pressed.
+                    setState(() {});
+                  });
+              }
+              videoPlayController.value.isPlaying
+                  ? videoPlayController.pause()
+                  : videoPlayController.play();
+              setState(() {
+
+              });
+            },
+            child: videoPlayController.value.isPlaying ? Text('정지', style: TextStyle(color: Colors.black),) : Text('재생', style: TextStyle(color: Colors.black),),
+          ),
+
+        ),
+        Positioned(
+          left: 100,
+          right: 100,
+          top: 20,
+          child: Text('part${videoCursor}', textAlign: TextAlign.center, style: TextStyle(fontSize: 20.0, color: Colors.white),),
+        )
+      ],
+    );
+  }
+
   // 채점 위젯 렌더링!
   renderAnnotationPaper(){
     return Container(
@@ -531,100 +800,51 @@ class _DataAnnotationScreenState extends State<DataAnnotationScreen> {
     );
   }
 
-  renderDescription(){
-
-    int cursor = 0;
-
-    List<String> description_list = [
-      'asset/image/description_img/1.png',
-      'asset/image/description_img/2.png',
-      'asset/image/description_img/3.png',
-      'asset/image/description_img/4.png',
-      'asset/image/description_img/1.png',
-      'asset/image/description_img/1.png',
-    ];
-
-    showDialog(context: context, builder: (BuildContext context){
-      return StatefulBuilder(builder: (BuildContext context, StateSetter setState){
-        return AlertDialog(
-          title: Text('리뷰 시스템 사용법'),
-          content: Container(
-            width: MediaQuery.of(context).size.width,
-            decoration: BoxDecoration(
-                image: DecorationImage(
-                    image: AssetImage(description_list[cursor]),
-                    fit: BoxFit.fitWidth
-                )
-            ),
-          ),
-          actions: [
-            ElevatedButton(onPressed: (){
-              if(cursor == 0){
-                print('처음');
-              }else{
-                cursor-=1;
-              }
-              setState(() {
-
-              });
-            }, child: Text('이전')),
-            ElevatedButton(onPressed: (){
-              if(cursor > description_list.length -1){
-                print('마지막');
-              }else{
-                cursor+=1;
-              }
-              setState(() {
-
-              });
-            }, child: Text('다음'))
-          ],
-        );
-      });
-    });
-  }
-
   @override
   void dispose(){
     super.dispose();
 
   }
+
   @override
   void initState() {
-    super.initState();
-    song_list_future = loadSongList();
 
+    super.initState();
+
+    song_list_future = loadSongList();
     current_song_name = 'Chopinetudedae';
     myFuture = loadPartVideoList(current_song_name);
+    playVideoListFuture = loadPlayVideoList(current_song_name);
+
 
     final uidController = gX.Get.put(UidController());
 
-    _videoController = VideoPlayerController.asset('asset/video/bee.mp4')
+    _videoController = VideoPlayerController.asset('asset/video/bee.mp4') // 초기 동영상 설정
       ..initialize().then((_) {
         // Ensure the first frame is shown after the video is initialized, even before the play button has been pressed.
         setState(() {});
       });
 
+    _videoPlayController = VideoPlayerController.asset('asset/video/bee.mp4')..initialize().then((_) {
+        // Ensure the first frame is shown after the video is initialized, even before the play button has been pressed.
+        setState(() {});
+      });
+
+
+    // 페이지 로딩 되자마자 뜨는 로그인 알람.
     SchedulerBinding.instance.addPostFrameCallback((_) {
-      // your method where use the context
-      // Example navigate:
+
       showDialog(context: context, barrierDismissible: false, builder: (BuildContext context){
 
 
         bool _isLoginPaged = true;
-
         bool _isGenderCheckGirl = false;
         bool _isGenderCheckMan = true;
-
         String? departmentDropdownvalue = "음악과";
-
         String? jobDropdownValue = "학생";
-
         bool _isClickPhoneNumber = false;
-
         String user_name = '';
         String ph_num = '';
-
         TextEditingController _nameController = TextEditingController();
         TextEditingController _phnumController = TextEditingController();
 
@@ -924,10 +1144,6 @@ class _DataAnnotationScreenState extends State<DataAnnotationScreen> {
     });
   }
 
-
-
-
-
   // 서버 곡 리스트를 불러온다.
   Future<List> loadSongList() async {
 
@@ -940,7 +1156,7 @@ class _DataAnnotationScreenState extends State<DataAnnotationScreen> {
     dio.close();
     return responseBody;
   }
-// 곡에 대한 part 동영상을 불러온다.
+  // 곡에 대한 part 동영상을 불러온다.
   Future<List> loadPartVideoList(song_name) async {
     print('호출');
     Dio dio = Dio();
@@ -950,8 +1166,17 @@ class _DataAnnotationScreenState extends State<DataAnnotationScreen> {
     dio.close();
     return responseBody;
   }
+  Future<List> loadPlayVideoList(song_name) async {
+    print('호출');
+    Dio dio = Dio();
 
-//평가 데이터 자세히 조회하기
+    Response response = await dio.get(AWSRDSIP+'/load_play_video_list',queryParameters: {'song_name' : song_name});
+    List<dynamic> responseBody = response.data;
+    dio.close();
+    return responseBody;
+  }
+
+  //평가 데이터 자세히 조회하기
   Future<Map<dynamic, List>> loadReviewPartData(user_id, song_name) async {
 
     Dio dio = Dio();
@@ -991,9 +1216,9 @@ class _DataAnnotationScreenState extends State<DataAnnotationScreen> {
       return response.statusCode;
     }
   }
-
 }
 
+// 전역변수 관리를 위한 클래스.
 class UidController extends gX.GetxController{
   String uid = '';
 

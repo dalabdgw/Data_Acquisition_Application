@@ -5,12 +5,149 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e0dc829a-92df-4fcd-97e8-263a8a82897c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/server/database/aws_s3.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/database/save_play_video.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/lib/screen/admin_screen/enroll_song_screen.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/lib/screen/confirm_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/application/lib/screen/confirm_screen.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/lib/screen/data_annotation_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/application/lib/screen/data_annotation_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/lib/screen/review_data_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/application/lib/screen/review_data_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/lib/text_field_widget.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/lib/server_info.dart" beforeDir="false" afterPath="$PROJECT_DIR$/application/lib/server_info.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/Readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/server/Readme.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/database/database_server.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/database/database_server.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/database/save_song.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/database/save_song.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/datasets/phrase_data/phrase_data2023918205931.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/datasets/phrase_data/phrase_data202392018222.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/datasets/phrase_data/phrase_data202392018259.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/datasets/video_data/video_data2023918205931.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/datasets/video_data/video_data202392018222.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/datasets/video_data/video_data202392018259.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/datasets_part/video_data2023918205931/data0.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/datasets_part/video_data2023918205931/data1.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/datasets_part/video_data2023918205931/data10.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/datasets_part/video_data2023918205931/data11.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/datasets_part/video_data2023918205931/data12.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/datasets_part/video_data2023918205931/data13.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/datasets_part/video_data2023918205931/data14.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/datasets_part/video_data2023918205931/data15.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/datasets_part/video_data2023918205931/data16.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/datasets_part/video_data2023918205931/data17.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/datasets_part/video_data2023918205931/data18.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/datasets_part/video_data2023918205931/data19.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/datasets_part/video_data2023918205931/data2.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/datasets_part/video_data2023918205931/data20.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/datasets_part/video_data2023918205931/data21.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/datasets_part/video_data2023918205931/data22.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/datasets_part/video_data2023918205931/data23.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/datasets_part/video_data2023918205931/data24.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/datasets_part/video_data2023918205931/data25.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/datasets_part/video_data2023918205931/data26.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/datasets_part/video_data2023918205931/data27.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/datasets_part/video_data2023918205931/data28.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/datasets_part/video_data2023918205931/data29.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/datasets_part/video_data2023918205931/data3.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/datasets_part/video_data2023918205931/data30.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/datasets_part/video_data2023918205931/data31.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/datasets_part/video_data2023918205931/data32.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/datasets_part/video_data2023918205931/data33.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/datasets_part/video_data2023918205931/data34.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/datasets_part/video_data2023918205931/data35.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/datasets_part/video_data2023918205931/data36.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/datasets_part/video_data2023918205931/data37.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/datasets_part/video_data2023918205931/data38.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/datasets_part/video_data2023918205931/data39.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/datasets_part/video_data2023918205931/data4.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/datasets_part/video_data2023918205931/data5.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/datasets_part/video_data2023918205931/data6.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/datasets_part/video_data2023918205931/data7.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/datasets_part/video_data2023918205931/data8.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/datasets_part/video_data2023918205931/data9.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/datasets_part/video_data202392018222/data0.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/datasets_part/video_data202392018222/data1.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/datasets_part/video_data202392018222/data10.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/datasets_part/video_data202392018222/data11.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/datasets_part/video_data202392018222/data12.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/datasets_part/video_data202392018222/data13.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/datasets_part/video_data202392018222/data14.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/datasets_part/video_data202392018222/data15.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/datasets_part/video_data202392018222/data16.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/datasets_part/video_data202392018222/data17.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/datasets_part/video_data202392018222/data18.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/datasets_part/video_data202392018222/data19.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/datasets_part/video_data202392018222/data2.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/datasets_part/video_data202392018222/data20.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/datasets_part/video_data202392018222/data21.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/datasets_part/video_data202392018222/data22.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/datasets_part/video_data202392018222/data23.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/datasets_part/video_data202392018222/data24.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/datasets_part/video_data202392018222/data25.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/datasets_part/video_data202392018222/data26.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/datasets_part/video_data202392018222/data27.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/datasets_part/video_data202392018222/data28.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/datasets_part/video_data202392018222/data29.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/datasets_part/video_data202392018222/data3.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/datasets_part/video_data202392018222/data30.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/datasets_part/video_data202392018222/data31.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/datasets_part/video_data202392018222/data32.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/datasets_part/video_data202392018222/data33.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/datasets_part/video_data202392018222/data34.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/datasets_part/video_data202392018222/data35.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/datasets_part/video_data202392018222/data36.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/datasets_part/video_data202392018222/data37.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/datasets_part/video_data202392018222/data38.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/datasets_part/video_data202392018222/data39.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/datasets_part/video_data202392018222/data4.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/datasets_part/video_data202392018222/data5.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/datasets_part/video_data202392018222/data6.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/datasets_part/video_data202392018222/data7.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/datasets_part/video_data202392018222/data8.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/datasets_part/video_data202392018222/data9.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/datasets_part/video_data202392018259/data0.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/datasets_part/video_data202392018259/data1.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/datasets_part/video_data202392018259/data10.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/datasets_part/video_data202392018259/data11.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/datasets_part/video_data202392018259/data12.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/datasets_part/video_data202392018259/data13.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/datasets_part/video_data202392018259/data14.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/datasets_part/video_data202392018259/data15.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/datasets_part/video_data202392018259/data16.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/datasets_part/video_data202392018259/data17.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/datasets_part/video_data202392018259/data18.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/datasets_part/video_data202392018259/data19.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/datasets_part/video_data202392018259/data2.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/datasets_part/video_data202392018259/data20.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/datasets_part/video_data202392018259/data21.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/datasets_part/video_data202392018259/data22.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/datasets_part/video_data202392018259/data23.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/datasets_part/video_data202392018259/data24.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/datasets_part/video_data202392018259/data25.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/datasets_part/video_data202392018259/data26.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/datasets_part/video_data202392018259/data27.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/datasets_part/video_data202392018259/data28.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/datasets_part/video_data202392018259/data29.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/datasets_part/video_data202392018259/data3.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/datasets_part/video_data202392018259/data30.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/datasets_part/video_data202392018259/data31.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/datasets_part/video_data202392018259/data32.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/datasets_part/video_data202392018259/data33.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/datasets_part/video_data202392018259/data34.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/datasets_part/video_data202392018259/data35.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/datasets_part/video_data202392018259/data36.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/datasets_part/video_data202392018259/data37.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/datasets_part/video_data202392018259/data38.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/datasets_part/video_data202392018259/data39.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/datasets_part/video_data202392018259/data4.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/datasets_part/video_data202392018259/data5.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/datasets_part/video_data202392018259/data6.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/datasets_part/video_data202392018259/data7.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/datasets_part/video_data202392018259/data8.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/datasets_part/video_data202392018259/data9.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/main.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/make_video_to_part/Readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/make_video_to_part/main.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/make_video_to_part/phrase_data.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/file_server/make_video_to_part/video.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/main.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/server_info.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -1,0 +1,4 @@
+CORS 문제
+
+- 다음 URL 접속 후 해결
+https://kjmhercules.tistory.com/8 

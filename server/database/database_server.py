@@ -4,16 +4,11 @@ import pymysql
 from datetime import datetime
 
 def create_app():
-
     # db 연결시 rds 정보 필요
-
-    print('AWS RDS 정보를 입력하셔야 합니다.')
+    print('데이터베이스 연결 정보를 입력하셔야 합니다.')
     print('HOST, USER, PASSWORD 순으로 입력 해주세요!')
-
     AWS_RDS_HOST, AWS_RDS_USER, AWS_RDS_PASSWORD = input('스페이스 바로 띄어서 입력하기: ').split(' ')
-
     AWS_RDS_DATABASE_NAME = 'annotationDB'
-
     app = Flask(__name__)
     CORS(app)
     # db 접속하기 위한 변수
@@ -21,7 +16,6 @@ def create_app():
     app.DB_USER =AWS_RDS_USER
     app.DB_PASSWORD = AWS_RDS_PASSWORD
     app.DB_NAME = AWS_RDS_DATABASE_NAME
-
     # db connector 정의
     def connect_to_db():
         # 데이터베이스 연결 설정
@@ -34,7 +28,6 @@ def create_app():
         connection = pymysql.connect(host=db_host, user=db_user, password=db_password, database=database)
 
         return connection
-
     # annotation DB 만들기
     def makeAnnotationDatabase():
         try:
@@ -65,7 +58,6 @@ def create_app():
         finally:
             cursor.close()
             connection.close()
-
     # table 만들기
     def makeSongListTable():
         try:
@@ -200,6 +192,40 @@ def create_app():
         finally:
             cursor.close()
             connection.close()
+
+    def makePlayVideoTable():
+        try:
+            # MySQL 데이터베이스에 연결
+            connection = connect_to_db()
+
+            # 커서 생성
+            cursor = connection.cursor()
+
+            # 테이블 생성 쿼리 작성
+            create_table_query = """
+            CREATE TABLE IF NOT EXISTS play_video_table(
+                id INT AUTO_INCREMENT PRIMARY KEY,
+                song_id INT NOT NULL,
+                part_url VARCHAR(255) NOT NULL,
+                part_seq int NOT NULL,
+                foreign key (song_id) references song_table(id)
+            );
+            """
+
+            # 테이블 생성 쿼리 실행
+            cursor.execute(create_table_query)
+
+
+            print("테이블 'play_video_table'이 성공적으로 생성되었습니다.")
+
+            return '200'
+
+        except pymysql.MySQLError as e:
+            print("MySQL 에러 발생:", e)
+        finally:
+            cursor.close()
+            connection.close()
+
     # insert func
     # song_name 해당하는  song_name을 입력!
     def insertSongTable(song_name):
@@ -557,6 +583,54 @@ def create_app():
             cursor.close()
             connection.close()
 
+    def loadPlayVideoPartTable(song_name):
+        try:
+            # MySQL 데이터베이스에 연결
+            connection = connect_to_db()
+
+            # 커서 생성
+            cursor = connection.cursor()
+
+            insert_q = """
+                SELECT id FROM song_table WHERE song_name = %s
+            """
+            cursor.execute(insert_q, song_name)
+
+            song_id = cursor.fetchone()[0]
+
+            # 테이블 생성 쿼리 작성
+            insert_query = """
+                SELECT part_url, part_seq FROM play_video_table WHERE song_id = %s
+            """
+
+            # 테이블 생성 쿼리 실행
+            list_song_dict = []
+            song_dict = {}
+            cursor.execute(insert_query, song_id)
+            part_list = cursor.fetchall()
+
+            for i in part_list:
+                song_dict = {}
+                song_dict['part_url'] = i[0]
+                song_dict['part_seq'] = i[1]
+                list_song_dict.append(song_dict)
+
+            for i in range(len(list_song_dict)):
+                for j in range(len(list_song_dict) - i - 1):
+                    if list_song_dict[j]['part_seq'] > list_song_dict[j + 1]['part_seq']:
+                        temp = list_song_dict[j]
+                        list_song_dict[j] = list_song_dict[j + 1]
+                        list_song_dict[j + 1] = temp
+
+            print("테이블 'play_video_table'에서 데이터 조회 완료.")
+
+            return list_song_dict
+
+        except pymysql.MySQLError as e:
+            print("MySQL 에러 발생:", e)
+        finally:
+            cursor.close()
+            connection.close()
     ## user define
     def inputUser(user_data):
 
@@ -588,7 +662,6 @@ def create_app():
         finally:
             cursor.close()
             connection.close()
-
     def selectUser(query_data):
 
         try:
@@ -615,14 +688,13 @@ def create_app():
         finally:
             cursor.close()
             connection.close()
-
-
     # db 연결
     makeAnnotationDatabase()
     makeSongListTable()
     makeSongPartListTable()
     makeReviewTable()
     makeUserTable()
+    makePlayVideoTable()
 
     @app.route('/ping', methods=['GET'])
     def ping():
@@ -634,6 +706,14 @@ def create_app():
         song_name = request.args.get('song_name')
         data = loadSongPartTable(song_name)
         return jsonify(data)
+
+    @app.route('/load_play_video_list', methods=['GET'])
+    def load_play_video_list():
+        song_name = request.args.get('song_name')
+        data = loadPlayVideoPartTable(song_name)
+        return jsonify(data)
+
+
     @app.route('/input_review_data', methods=['POST'])
     def input_review_data():
 
